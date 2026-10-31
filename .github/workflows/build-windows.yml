@@ -1,0 +1,54 @@
+name: Build aplikasi Windows
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependensi
+        run: pip install -r requirements.txt pyinstaller==6.22.3
+
+      - name: Build ALMA.exe
+        run: pyinstaller --noconfirm alma.spec
+
+      - name: Uji aplikasi hasil build (--selftest)
+        shell: pwsh
+        timeout-minutes: 12
+        run: |
+          $d = "dist\ALMA"
+          $p = Start-Process -FilePath "$d\ALMA.exe" -ArgumentList "--selftest" -PassThru
+          $null = $p.Handle
+          if (-not $p.WaitForExit(480000)) { Stop-Process -Id $p.Id -Force; Write-Host "TIMEOUT"; $code = 99 }
+          else { $code = $p.ExitCode }
+          foreach ($f in "logs\selftest.log","logs\selftest_hang.log","crash.log","console.log","logs\alma.log") {
+            if (Test-Path "$d\$f") { Write-Host "===== $f"; Get-Content "$d\$f" -Tail 80 }
+          }
+          if ($code -ne 0) { Write-Error "Selftest gagal (kode $code)"; exit 1 }
+
+      - name: Bersihkan sisa uji & tambahkan panduan
+        shell: pwsh
+        run: |
+          $d = "dist\ALMA"
+          foreach ($x in "logs","output","docs","data","settings.json","positions.csv",".update.lock","crash.log","console.log") {
+            if (Test-Path "$d\$x") { Remove-Item "$d\$x" -Recurse -Force }
+          }
+          foreach ($c in "packaging\CARA PAKAI.txt") { if (Test-Path $c) { Copy-Item $c "$d\CARA PAKAI.txt"; break } }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ALMA-Windows
+          path: dist/ALMA/
+          retention-days: 30

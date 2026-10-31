@@ -1,0 +1,4 @@
+Salinan cadangan daftar anggota S&P 500, dipakai hanya bila unduhan harian gagal.
+Sumber: https://github.com/fja05680/sp500 (lisensi MIT, (c) Farrell J. Aultman), data per 18-08-2026.
+  sp500.csv                  anggota sekarang (kode, nama, sektor GICS)
+  sp500_ticker_start_end.csv tanggal masuk & keluar indeks tiap kode

@@ -1,0 +1,128 @@
+# =====================================================================
+#  ALMA — Algorithmic Live Market Analyzer — konfigurasi utama
+#  Semua nilai uang dalam USD (dolar AS), ditulis penuh tanpa pemisah ribuan.
+# =====================================================================
+
+universe:
+  min_market_cap: 10000000000        # anggota S&P 500 dengan kapitalisasi pasar >= US$10 miliar
+  min_avg_value_20d: 50000000        # likuiditas: rata-rata nilai transaksi 20 hari >= US$50 juta
+  min_price: 5
+  max_stale_days: 5                  # buang saham yang tidak diperdagangkan > 5 hari (halt / delisting)
+  exclude: []                        # kode saham yang ingin dikecualikan manual, mis. [GOOG, BRK.B]
+
+data:
+  history_period: 5y                 # riwayat harga harian yang diunduh (juga untuk backtest)
+  benchmark: "^GSPC"                 # indeks S&P 500
+  fundamentals_cache_days: 7         # fundamental di-refresh mingguan (berubah per kuartal)
+  shares_cache_days: 7
+
+market:                              # aturan pasar & broker AS
+  fractional_shares: true            # broker mendukung saham pecahan? false = hanya lembar utuh
+  fractional_step: 0.0001            # langkah jumlah saham pecahan terkecil
+  usd_idr_fallback: 16300            # kurs cadangan bila Yahoo (IDR=X) gagal; hanya untuk tampilan Rupiah
+
+capital: 10000                       # modal acuan (USD) untuk menghitung jumlah saham
+risk_per_trade: 0.01                 # maks. rugi per posisi = 1% modal
+
+fees:                                # biaya per transaksi (proporsi nilai transaksi), termasuk spread
+  buy: 0.001                         # 0,10% — sesuaikan dengan broker Anda (komisi + spread)
+  sell: 0.001                        # 0,10% — termasuk SEC fee & FINRA TAF yang kecil
+  fx_spread: 0.005                   # selisih kurs saat konversi Rupiah <-> USD (sekali saat setor/tarik;
+                                     # tidak dihitung per transaksi, hanya ditampilkan sebagai catatan)
+
+thresholds:                          # skor -100..+100 -> sinyal
+  strong_buy: 60
+  buy: 30
+  sell: -30
+  strong_sell: -60
+
+# Parameter AWAL, belum dituning dengan data AS. Jalankan workflow "Tuning strategi" (mode full)
+# setelah repo aktif, lalu tetapkan nilai di sini berdasarkan hasil in-sample / out-of-sample.
+horizons:
+  short:
+    label: "Jangka Pendek (Swing)"
+    allocation: 0.20                 # porsi modal untuk bucket ini
+    max_positions: 5
+    max_weight: 0.30                 # bobot maks. satu saham di dalam bucket
+    sector_cap: 0.50
+    hold_min_days: 3
+    hold_max_days: 10                # time-stop (hari bursa)
+    entry_atr: 0.5                   # area beli: harga - 0,5 ATR
+    chase_atr: 0.3                   # batas kejar: harga + 0,3 ATR (lewat ini, batal beli)
+    sl_atr: 1.5
+    max_sl_pct: 0.07
+    rr: [1.5, 2.5]                   # TP1 = 1,5R ; TP2 = 2,5R
+    min_score: 30                    # skor minimum untuk boleh beli
+    market_filter: ema20             # none | ema20 | sma50 | sma200 : beli hanya bila S&P 500 di atas MA ini
+    trend_filter: none               # none | sma50 | sma200 : beli hanya bila harga saham di atas MA ini
+    entry_mode: open                 # open = beli di pembukaan sesi berikutnya ; limit = antre di area bawah
+    limit_days: 3                    # masa berlaku limit order (mode limit)
+    trail_ma: 9                      # 0 = mati ; n = setelah TP1, jual sisa bila close < EMA n
+    market_exit: none                # none | half | all : jual saat S&P 500 berbalik turun (posisi terbuka)
+    market_exit_ma: sma50            # ema20 | sma50 : MA S&P 500 yang dipakai
+    market_exit_confirm: 1           # berapa hari close berturut-turut di bawah MA
+  medium:
+    label: "Jangka Menengah (1-3 bulan)"
+    allocation: 0.30
+    max_positions: 8
+    max_weight: 0.20
+    sector_cap: 0.40
+    hold_min_days: 20
+    hold_max_days: 60
+    entry_atr: 1.0
+    chase_atr: 0.2
+    sl_atr: 2.5
+    max_sl_pct: 0.12
+    rr: [2.0, 3.5]
+    min_score: 30
+    market_filter: sma50
+    trend_filter: none
+    entry_mode: open
+    limit_days: 5
+    trail_ma: 20
+    market_exit: none
+    market_exit_ma: sma50
+    market_exit_confirm: 1
+  long:
+    label: "Jangka Panjang (6-24 bulan)"
+    allocation: 0.50
+    max_positions: 10
+    max_weight: 0.15
+    sector_cap: 0.35
+    hold_min_days: 120
+    hold_max_days: 500
+    entry_atr: 1.5
+    chase_atr: 0.0
+    sl_atr: 4.0
+    max_sl_pct: 0.20
+    rr: [1.5, 3.0]
+    min_score: 30
+    market_filter: none
+    trend_filter: sma200             # cicil hanya saham yang harganya di atas SMA200 (tren primer naik)
+    regime_scale:                    # porsi bucket yang boleh dipakai menurut posisi S&P 500
+      above_sma200: 1.0              # S&P 500 di atas SMA200: penuh
+      above_sma50: 0.6               # di bawah SMA200 tapi di atas SMA50: 60%
+      below: 0.3                     # di bawah keduanya (bearish): 30%, sisanya kas
+
+backtest:
+  horizons: [short, medium]          # jangka panjang butuh fundamental historis, tidak di-backtest
+  refresh_days: 7
+  split_date: "2024-11-01"           # sebelum = in-sample (untuk memilih), sesudah = out-of-sample (untuk menguji)
+  point_in_time: true                # universe per tanggal: anggota S&P 500 + market cap + likuiditas HARI ITU
+  former_members: true               # ikut uji mantan anggota S&P 500 yang datanya masih ada di Yahoo
+  execution:
+    enabled: true
+    slippage_bps: 5                  # stop loss di tengah sesi terisi 0,05% lebih buruk (menyeberang spread)
+    auction_slippage_bps: 2          # transaksi di harga pembukaan/penutupan: 0,02% lebih buruk
+    limit_through: true              # limit order baru dianggap terisi bila harga menembus $0,01 melewatinya
+
+archive:                             # arsip fundamental untuk backtest jangka panjang di masa depan
+  statements_days: 7                 # tiap saham diperbarui laporan keuangannya seminggu sekali
+  statements_per_run: 100            # maks. saham per hari (bergilir, agar tidak kena limit Yahoo)
+
+positions:                           # pemantau posisi pribadi (positions.csv, TIDAK pernah di-commit)
+  dashboard: percent                 # full | percent (tanpa jumlah saham & nominal) | hidden ; Telegram selalu lengkap
+
+notify:
+  telegram: true                     # aktif hanya bila secret TELEGRAM_BOT_TOKEN & TELEGRAM_CHAT_ID diisi
+  dashboard_url: "https://detoxfix.github.io/ALMA-Algorithmic-Live-Market-Analyzer/"

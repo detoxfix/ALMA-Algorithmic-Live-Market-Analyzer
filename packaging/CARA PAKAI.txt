@@ -1,0 +1,41 @@
+ALMA - APLIKASI LAPTOP (WINDOWS)
+================================
+ALMA = Algorithmic Live Market Analyzer
+Sinyal beli/jual saham Amerika Serikat: anggota S&P 500 dengan kapitalisasi pasar >= US$10 miliar.
+
+1. Pindahkan seluruh folder ini ke tempat tetap, misalnya:  Documents\ALMA
+   (jangan dijalankan dari dalam file .zip, dan jangan di folder Program Files)
+
+2. Klik dua kali "ALMA.exe".
+   Bila muncul "Windows protected your PC": klik "More info" -> "Run anyway".
+   (Muncul karena aplikasi buatan sendiri tidak punya sertifikat tanda tangan berbayar.)
+
+3. Klik "Update sekarang".
+   Pertama kali sekitar 15-30 menit (mengunduh 5 tahun harga ~600 saham, jumlah saham & fundamental).
+   Berikutnya 3-8 menit.
+
+4. Centang "Update otomatis ... 05:30 WIB" agar berjalan sendiri Selasa-Sabtu pagi,
+   setelah bursa AS tutup (03:00 WIB saat musim panas AS, 04:00 WIB saat musim dingin).
+   Bila laptop mati/tidur pada jam itu, update dijalankan begitu laptop menyala.
+
+Membaca sinyal:
+- Sinyal pagi ini berlaku untuk sesi New York malam ini (buka 20:30 WIB musim panas AS / 21:30 WIB musim dingin).
+- Harga dalam USD ($). Jumlah saham boleh pecahan bila broker Anda mendukung (atur di config.yaml:
+  market.fractional_shares). Nilai setara Rupiah memakai kurs USD/IDR harian dari Yahoo.
+
+Tombol lain:
+- Buka dashboard  : membuka dashboard di browser (file di laptop, tidak bisa dilihat orang lain)
+- Posisi saya     : catat saham yang Anda beli (harga beli USD, jumlah saham) -> aplikasi memberi tahu
+                    kapan TP / cut loss / jual
+- Usulan          : usulan perubahan parameter dari data terbaru; hanya berlaku bila Anda klik "Terapkan"
+                    (config lama disalin ke folder backup\)
+- Pengaturan      : modal acuan (USD), token & chat ID Telegram (untuk notifikasi ke HP)
+- Folder data     : membuka folder tempat semua data tersimpan
+
+Baris "Kinerja sinyal vs backtest" di jendela utama adalah alarm: bila hasil rekomendasi sungguhan
+jauh lebih buruk dari perkiraan backtest, statusnya menjadi WASPADA atau BAHAYA (juga dikirim ke Telegram).
+
+Semua data ada di folder ini: config.yaml, positions.csv, settings.json, docs\ (dashboard),
+data\ (cache & arsip), logs\ (catatan proses; kirim logs\alma.log bila ada masalah).
+
+Alat bantu analisis, bukan nasihat investasi. Cek ulang harga di aplikasi broker sebelum bertransaksi.

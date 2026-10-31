@@ -1,0 +1,23 @@
+# data pribadi — JANGAN pernah di-commit ke repo publik
+positions.csv
+settings.json
+backup/
+
+# profil browser (bisa berisi cookie & login) — jangan pernah ikut repo
+**/browser_profile/
+# data/cache (harga, jumlah saham, fundamental publik) SENGAJA di-commit agar update harian cepat
+
+# hasil lokal
+output/
+logs/
+.update.lock
+crash.log
+console.log
+
+# Python & build
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.zip
