@@ -36,8 +36,9 @@ thresholds:                          # skor -100..+100 -> sinyal
   sell: -30
   strong_sell: -60
 
-# Parameter AWAL, belum dituning dengan data AS. Jalankan workflow "Tuning strategi" (mode full)
-# setelah repo aktif, lalu tetapkan nilai di sini berdasarkan hasil in-sample / out-of-sample.
+# Jangka pendek: hasil tuning data AS 31-10-2026 (dipilih dari in-sample < 2024-11-01; out-of-sample
+#   +0,15%/transaksi, PF 1,05 — lihat docs/data/tuning.json).
+# Jangka menengah: parameter awal dipertahankan; kandidat tuning gagal di out-of-sample.
 horizons:
   short:
     label: "Jangka Pendek (Swing)"
@@ -46,18 +47,18 @@ horizons:
     max_weight: 0.30                 # bobot maks. satu saham di dalam bucket
     sector_cap: 0.50
     hold_min_days: 3
-    hold_max_days: 10                # time-stop (hari bursa)
+    hold_max_days: 15   # tuning 31-10-2026
     entry_atr: 0.5                   # area beli: harga - 0,5 ATR
     chase_atr: 0.3                   # batas kejar: harga + 0,3 ATR (lewat ini, batal beli)
-    sl_atr: 1.5
-    max_sl_pct: 0.07
-    rr: [1.5, 2.5]                   # TP1 = 1,5R ; TP2 = 2,5R
-    min_score: 30                    # skor minimum untuk boleh beli
-    market_filter: ema20             # none | ema20 | sma50 | sma200 : beli hanya bila S&P 500 di atas MA ini
-    trend_filter: none               # none | sma50 | sma200 : beli hanya bila harga saham di atas MA ini
-    entry_mode: open                 # open = beli di pembukaan sesi berikutnya ; limit = antre di area bawah
+    sl_atr: 2.5   # tuning 31-10-2026
+    max_sl_pct: 0.1   # tuning 31-10-2026
+    rr: [2.0, 3.0]   # tuning 31-10-2026
+    min_score: 60   # tuning 31-10-2026
+    market_filter: sma50   # tuning 31-10-2026
+    trend_filter: sma50   # tuning 31-10-2026
+    entry_mode: open   # tuning 31-10-2026
     limit_days: 3                    # masa berlaku limit order (mode limit)
-    trail_ma: 9                      # 0 = mati ; n = setelah TP1, jual sisa bila close < EMA n
+    trail_ma: 0   # tuning 31-10-2026
     market_exit: none                # none | half | all : jual saat S&P 500 berbalik turun (posisi terbuka)
     market_exit_ma: sma50            # ema20 | sma50 : MA S&P 500 yang dipakai
     market_exit_confirm: 1           # berapa hari close berturut-turut di bawah MA
