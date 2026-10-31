@@ -1,0 +1,11 @@
+id,date,ticker,code,horizon,signal,score,entry,entry_low,entry_high,tp1,tp2,sl,max_hold_days,status,outcome,entry_date,entry_px,exit_date,exit_px,ret,days,tp1_hit,entry_mode,limit_days,trail_ma,market_exit,market_exit_ma,market_exit_confirm
+2026-10-30-DELL-long,2026-10-30,DELL,DELL,long,STRONG BUY,93.8,424.3,376.21,424.3,551.59,678.88,339.44,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-EOG-long,2026-10-30,EOG,EOG,long,STRONG BUY,90.0,165.54,160.04,165.54,187.56,209.58,150.86,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-CF-long,2026-10-30,CF,CF,long,STRONG BUY,90.0,123.3,117.22,123.3,147.63,171.96,107.08,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-APA-long,2026-10-30,APA,APA,long,STRONG BUY,90.0,52.82,50.51,52.82,62.1,71.39,46.63,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-NUE-long,2026-10-30,NUE,NUE,long,STRONG BUY,88.0,273.87,261.38,273.87,323.85,373.83,240.55,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-STLD-long,2026-10-30,STLD,STLD,long,STRONG BUY,88.0,250.8,237.95,250.8,302.24,353.67,216.51,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-DVN-long,2026-10-30,DVN,DVN,long,STRONG BUY,87.5,52.15,50.1,52.15,60.37,68.59,46.67,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-MU-long,2026-10-30,MU,MU,long,STRONG BUY,86.5,884.74,810.39,884.74,1150.16,1415.59,707.79,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-GRMN-long,2026-10-30,GRMN,GRMN,long,STRONG BUY,84.0,272.67,258.55,272.67,329.18,385.68,235.0,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
+2026-10-30-PSX-long,2026-10-30,PSX,PSX,long,STRONG BUY,83.0,282.83,267.96,282.83,342.34,401.84,243.16,500,OPEN,MENUNGGU,,,,,,,,open,3,0,none,sma50,1
