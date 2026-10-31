@@ -1,7 +1,8 @@
 """Backtest tingkat PORTOFOLIO: menjalankan sinyal pendek & menengah sebagai akun sungguhan.
 
 Setiap hari bursa:
-  1. Posisi baru dibuka pada hari terisinya order (urut skor tertinggi) bila kuota posisi masih ada,
+  1. Posisi baru dibuka pada hari terisinya order (urutan menurut opsi `rank`, lihat ranking.py) bila kuota
+     posisi masih ada,
      saham belum dipegang, dan kas cukup. Ukuran = ekuitas bucket x min(max_weight, 1/max_positions),
      dibatasi aturan risiko (rugi ke SL <= risk_per_trade x modal total), dibulatkan ke lembar utuh atau
      pecahan sesuai broker (market.fractional_shares).
@@ -19,6 +20,7 @@ import numpy as np
 import pandas as pd
 
 from . import backtest as bt
+from .ranking import rank_value
 from .utils import MARKET, log, qty_floor
 
 
@@ -67,6 +69,7 @@ def _weekly(s: pd.Series, base: float) -> list:
 
 def run_bucket(cands: pd.DataFrame, closes: pd.DataFrame, calendar: pd.DatetimeIndex, capital_total: float,
                hcfg: dict, cfg: dict) -> dict:
+    rank = hcfg.get("rank") or "score"
     fb, fs = cfg["fees"]["buy"], cfg["fees"]["sell"]
     alloc = hcfg["allocation"]
     cash = capital_total * alloc
@@ -78,7 +81,7 @@ def run_bucket(cands: pd.DataFrame, closes: pd.DataFrame, calendar: pd.DatetimeI
     for r in cands.itertuples(index=False):
         by_day[r.entry_date].append(r)
     for k in by_day:
-        by_day[k].sort(key=lambda r: -r.score)
+        by_day[k].sort(key=lambda r: rank_value(rank, r.score, r.atr_pct, getattr(r, "rs", None), r.ticker, r.date))
 
     pos: dict[str, dict] = {}
     last_eq = cash
@@ -133,7 +136,7 @@ def run_bucket(cands: pd.DataFrame, closes: pd.DataFrame, calendar: pd.DatetimeI
         "trades": int(len(tr)), "skipped_full": skipped_full, "skipped_cash": skipped_cash,
         "win_rate": float((tr["ret"] > 0).mean()) if len(tr) else None,
         "avg_trade": float(tr["ret"].mean()) if len(tr) else None,
-        "max_positions": maxp, "slot": slot,
+        "max_positions": maxp, "slot": slot, "rank": rank,
     })
     return {"stats": st, "equity": eq, "exposure": expo}
 

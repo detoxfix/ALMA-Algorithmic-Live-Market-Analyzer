@@ -27,6 +27,7 @@ def prepare(ind: dict[str, pd.DataFrame], horizons=("short", "medium")) -> dict:
     for t, d in ind.items():
         item = {"d": d, "dates": d.index,
                 **{k: d[k].to_numpy(dtype=float) for k in ("Open", "High", "Low", "Close", "ATR14", "EMA20", "SMA50")},
+                "RS_60": (d["RS_60"] if "RS_60" in d else pd.Series(np.nan, index=d.index)).to_numpy(dtype=float),
                 "ema": {}, "mflag": {},
                 "mkt": {m: d[f"MKT_{m}"].to_numpy(dtype=float) for m in ("ema20", "sma50", "sma200")
                         if f"MKT_{m}" in d}}
@@ -104,14 +105,14 @@ def trades_for(prep: dict, h: str, hcfg: dict, cfg: dict, detail: bool = False) 
                                  "tp1_date": d_[res["tp1_pos"]] if res["tp1_pos"] is not None else pd.NaT,
                                  "entry_px": res["entry_px"], "exit_px": res["exit_px"],
                                  "tp1_px": res["tp1_px"], "sl": plan["sl"],
-                                 "atr_pct": it["ATR14"][pos] / it["Close"][pos]})
+                                 "atr_pct": it["ATR14"][pos] / it["Close"][pos], "rs": it["RS_60"][pos]})
                 rows.append(row_)
             elif not res["filled"] and res["outcome"] == "BATAL":
                 rows.append({"ticker": t, "date": it["dates"][pos], "score": sv[pos], "ret": np.nan,
                              "days": 0, "outcome": "BATAL", "current": it["current"]})
     cols = ["ticker", "date", "score", "ret", "days", "outcome", "current"]
     if detail:
-        cols += ["entry_date", "exit_date", "tp1_date", "entry_px", "exit_px", "tp1_px", "sl", "atr_pct"]
+        cols += ["entry_date", "exit_date", "tp1_date", "entry_px", "exit_px", "tp1_px", "sl", "atr_pct", "rs"]
     return pd.DataFrame(rows, columns=cols)
 
 

@@ -154,6 +154,20 @@ def test_symbols_and_positions_parsing():
     assert _num("0.25") == 0.25 and _num("") is None
 
 
+def test_ranking():
+    from src.ranking import rank_value
+    c = [("A", 90, 0.03, 0.10), ("B", 65, 0.01, -0.02), ("C", 75, 0.02, 0.20)]
+    order = lambda r: [x[0] for x in sorted(c, key=lambda x: rank_value(r, x[1], x[2], x[3], x[0], "2026-10-30"))]  # noqa: E731
+    assert order("score") == ["A", "C", "B"] and order("low_score") == ["B", "C", "A"]
+    assert order("low_vol") == ["B", "C", "A"] and order("rs") == ["C", "A", "B"]
+    assert order("random") == order("random")                         # acak tetapi dapat diulang
+    picks = [{"code": k, "ticker": k, "score": s_, "atr_pct": a, "rs_60": r, "sector": k, "entry": 100.0, "sl": 95.0}
+             for k, s_, a, r in c]
+    out, _ = allocate(picks, {"max_positions": 2, "max_weight": 0.5, "sector_cap": 1.0, "allocation": 0.2,
+                              "rank": "low_vol"}, 10_000, 0.01)
+    assert sorted(p["code"] for p in out) == ["B", "C"]
+
+
 def test_monitor():
     from src.monitor import check, streak_prob
     assert abs(streak_prob(3, 3, 0.5) - 0.125) < 1e-9 and streak_prob(5, 1, 0.0) == 0.0

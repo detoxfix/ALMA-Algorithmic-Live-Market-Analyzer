@@ -173,7 +173,8 @@ def run(cfg: dict, demo: bool = False, backtest_mode: str = "auto") -> dict:
                 item = {"ticker": t, "code": u["code"], "name": name, "sector": sector, "horizon": h,
                         "price": float(last["Close"]), "chg_1d": fnum(last["CHG_1D"]), "mcap": float(u["mcap"]),
                         "score": sc, "signal": sig, "confidence": round(min(1, abs(sc) / 100) * cov, 3),
-                        "atr_pct": fnum(last["ATR_pct"]), "reasons": reasons, "risks": risks}
+                        "atr_pct": fnum(last["ATR_pct"]), "rs_60": fnum(last.get("RS_60")),
+                        "date": as_of.strftime("%Y-%m-%d"), "reasons": reasons, "risks": risks}
                 if bull:
                     plan = make_plan(last, h, cfg["horizons"][h], cfg["fees"])
                     if plan:
@@ -208,7 +209,7 @@ def run(cfg: dict, demo: bool = False, backtest_mode: str = "auto") -> dict:
         per_h[h] = {"label": hcfg["label"], "allocation": hcfg["allocation"], "cash_weight": cash,
                     "regime_scale": scale, "regime_text": level_text if scale < 1 else None,
                     "buys": picked, "watchlist": watch[:15], "n_held": len(per_h[h]["held"]),
-                    "rules": {k: hcfg.get(k) for k in ("min_score", "market_filter", "trend_filter", "entry_mode",
+                    "rules": {k: hcfg.get(k) for k in ("min_score", "rank", "max_positions", "market_filter", "trend_filter", "entry_mode",
                                                        "limit_days", "trail_ma", "sl_atr", "max_sl_pct", "rr",
                                                        "market_exit", "market_exit_ma", "market_exit_confirm")},
                     "market_exit_active": mkt_exit_text(hcfg, bench),

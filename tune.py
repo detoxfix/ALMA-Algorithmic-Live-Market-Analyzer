@@ -12,6 +12,7 @@ Hasil: docs/data/tuning.json (dibaca untuk menetapkan config.yaml).
     python tune.py --full     # grid lengkap syarat masuk + cara keluar
     python tune.py --propose  # usulan parameter bulanan (walk-forward + uji 6 bulan terakhir), TIDAK diterapkan
     python tune.py --realism  # bandingkan backtest lama vs realistis (universe per tanggal, mantan anggota, slippage)
+    python tune.py --portfolio  # tuning TINGKAT AKUN: aturan pilih saham x jumlah posisi x set parameter
     python tune.py --demo     # uji coba data sintetis
 """
 from __future__ import annotations
@@ -32,6 +33,7 @@ from src.utils import load_json
 from src import loader
 from src.indicators import add_indicators
 from src.universe import backtest_set, filter_universe
+from src.ranking import RANKS
 from src.utils import ROOT, dump_json, log, now_wib, set_market
 
 STAGE1 = {
@@ -312,6 +314,105 @@ def run_propose(prep, ind, cfg, n_uni, demo, t0, rules=None):
     return out
 
 
+# ------------------------------------------------------------------ tuning tingkat akun
+# Rata-rata per transaksi menyesatkan bila akun hanya bisa memegang sedikit posisi: sebagian besar sinyal
+# terlewat dan yang terambil ditentukan aturan urutan. Di sini setiap kombinasi dijalankan sebagai akun
+# (portsim.run_bucket), dipilih dari in-sample saja (Sharpe tertinggi), lalu dilaporkan out-of-sample
+# berdampingan dengan S&P 500 beli & tahan.
+PORT_GRID = {"rank": list(RANKS),
+             "max_positions": {"short": [5, 10, 15, 20], "medium": [8, 12, 16, 24]}}
+PORT_MIN_TRADES_IS = 40
+PORT_N_PARAMSETS = 3          # set parameter teratas hasil grid per transaksi (selain config sekarang)
+
+
+def _param_sets(cfg: dict, h: str, prev: dict) -> list[tuple[str, dict]]:
+    base = cfg["horizons"][h]
+    sets = [("config sekarang", {})]
+    seen = [{k: base.get(k) for k in STAGE1}]
+    for x in ((prev.get("horizons") or {}).get(h) or {}).get("stage2_top", [])[:20]:
+        p = x.get("params") or {}
+        key = {k: p.get(k) for k in STAGE1}
+        if all(base.get(k) == v for k, v in p.items()) or key in seen:
+            continue
+        seen.append(key)
+        sets.append((f"grid #{len(sets)}", p))
+        if len(sets) > PORT_N_PARAMSETS:
+            break
+    return sets
+
+
+def run_portfolio(prep, ind, cfg, n_uni, demo, t0):
+    split = pd.Timestamp(cfg["backtest"]["split_date"])
+    closes = pd.DataFrame({t: d["Close"] for t, d in ind.items()}).sort_index()
+    calendar = closes.index
+    closes = closes.ffill()
+    cal = calendar[min(260, len(calendar) - 2):]            # ~1 tahun pemanasan indikator (SMA200 dst.)
+    bench = (pd.concat([d["BENCH"] for d in ind.values()], axis=1).bfill(axis=1).iloc[:, 0]
+             .reindex(calendar).ffill().loc[cal].dropna())
+    capital = float(cfg["capital"])
+    path = ROOT / ("output/tuning_demo.json" if demo else "docs/data/tuning.json")
+    prev = load_json(path, {}) or {}
+
+    def seg(eq, a=None, b=None):
+        e = eq
+        if a is not None:
+            e = e[e.index >= a]
+        if b is not None:
+            e = e[e.index < b]
+        return portsim.metrics(e) if len(e) > 20 else {}
+    keep = ("total_return", "cagr", "max_drawdown", "sharpe", "avg_exposure")
+    slim_m = lambda m: {k: m.get(k) for k in keep}  # noqa: E731
+    out = {"generated_at": now_wib().strftime("%Y-%m-%d %H:%M"), "demo": demo, "universe": n_uni,
+           "split_date": cfg["backtest"]["split_date"], "start": cal[0].strftime("%Y-%m-%d"),
+           "bench": {"in_sample": slim_m(seg(bench, None, split)), "out_sample": slim_m(seg(bench, split)),
+                     "full": slim_m(seg(bench))},
+           "horizons": {}}
+    for h in ("short", "medium"):
+        base = cfg["horizons"][h]
+        rows = []
+        for name, p in _param_sets(cfg, h, prev):
+            hc0 = {**copy.deepcopy(base), **p}
+            cands = bt.trades_for(prep, h, hc0, cfg, detail=True)
+            cands = cands[cands["outcome"] != "BATAL"].dropna(subset=["entry_date"])
+            cands = cands[cands["entry_date"] >= cal[0]]
+            for rank in PORT_GRID["rank"]:
+                for mp in PORT_GRID["max_positions"][h]:
+                    hc = {**hc0, "rank": rank, "max_positions": mp}
+                    res = portsim.run_bucket(cands, closes, cal, capital, hc, cfg)
+                    eq, ex = res["equity"], res["exposure"]
+                    is_m = portsim.metrics(eq[eq.index < split], ex[ex.index < split])
+                    oos_m = portsim.metrics(eq[eq.index >= split], ex[ex.index >= split])
+                    rows.append({"set": name, "params": p, "rank": rank, "max_positions": mp,
+                                 "trades": res["stats"].get("trades"),
+                                 "candidates_is": int((cands["entry_date"] < split).sum()),
+                                 "is": slim_m(is_m), "oos": slim_m(oos_m), "full": slim_m(res["stats"])})
+            log.info("Akun %s · %s: %d kombinasi aturan pilih x jumlah posisi", h, name, len(PORT_GRID["rank"]) *
+                     len(PORT_GRID["max_positions"][h]))
+        ok = [r for r in rows if (r["trades"] or 0) >= PORT_MIN_TRADES_IS and r["is"].get("sharpe") is not None]
+        ok.sort(key=lambda r: -r["is"]["sharpe"])
+        best = ok[0] if ok else None
+        cur = next((r for r in rows if r["set"] == "config sekarang" and r["rank"] == (base.get("rank") or "score")
+                    and r["max_positions"] == base["max_positions"]), None)
+        verdict = None
+        if best:
+            o, bo = best["oos"], out["bench"]["out_sample"]
+            verdict = {"oos_positive": (o.get("total_return") or 0) > 0,
+                       "oos_sharpe_beats_bench": (o.get("sharpe") or -9) > (bo.get("sharpe") or 9),
+                       "oos_return_beats_bench": (o.get("total_return") or -9) > (bo.get("total_return") or 9)}
+        out["horizons"][h] = {"current": cur, "best_is": best, "verdict": verdict,
+                              "top_is": ok[:15], "all": rows}
+        if best:
+            log.info("Akun %s terbaik (in-sample): %s rank=%s posisi=%d | IS Sharpe %.2f return %.1f%% | "
+                     "OOS Sharpe %s return %s", h, best["set"], best["rank"], best["max_positions"],
+                     best["is"]["sharpe"], 100 * (best["is"]["total_return"] or 0),
+                     f"{best['oos'].get('sharpe'):.2f}" if best["oos"].get("sharpe") is not None else "-",
+                     f"{100 * best['oos'].get('total_return'):.1f}%" if best["oos"].get("total_return") is not None else "-")
+    out["seconds"] = round(time.time() - t0)
+    prev["portfolio"] = out
+    dump_json(prev, path)
+    log.info("Tuning tingkat akun selesai dalam %d dtk -> %s", out["seconds"], path)
+
+
 def propose(cfg: dict, demo: bool = False) -> dict:
     """Dipanggil aplikasi Windows: unduh data, cari usulan, simpan proposal.json."""
     t0 = time.time()
@@ -326,6 +427,7 @@ def main():
     ap.add_argument("--full", action="store_true", help="grid lengkap syarat masuk & cara keluar")
     ap.add_argument("--realism", action="store_true", help="bandingkan backtest lama vs realistis")
     ap.add_argument("--propose", action="store_true", help="usulan parameter bulanan (tidak diterapkan)")
+    ap.add_argument("--portfolio", action="store_true", help="tuning tingkat akun (aturan pilih x jumlah posisi)")
     ap.add_argument("--config", default=str(ROOT / "config.yaml"))
     a = ap.parse_args()
     cfg = yaml.safe_load(open(a.config, encoding="utf-8"))
@@ -338,6 +440,9 @@ def main():
         return
     if a.realism:
         run_realism(prep, ind, cfg, n_uni, a.demo, t0)
+        return
+    if a.portfolio:
+        run_portfolio(prep, ind, cfg, n_uni, a.demo, t0)
         return
     if not a.full:
         run_exits(prep, ind, cfg, n_uni, a.demo, t0)
@@ -383,7 +488,7 @@ def main():
     result["seconds"] = round(time.time() - t0)
     path = ROOT / ("output/tuning_demo.json" if a.demo else "docs/data/tuning.json")
     prev = load_json(path, {}) or {}
-    for k in ("exits", "realism"):
+    for k in ("exits", "realism", "portfolio"):
         if k in prev:
             result[k] = prev[k]
     dump_json(result, path)

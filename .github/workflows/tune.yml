@@ -13,7 +13,8 @@ on:
           - propose   # usulan parameter bulanan (tidak diterapkan otomatis)
           - realism   # bandingkan backtest lama vs realistis
           - exits     # aturan keluar saat pasar berbalik
-          - full      # grid lengkap (lama, ~30-60 menit)
+          - full      # grid lengkap per transaksi
+          - portfolio # tuning tingkat akun: aturan pilih saham x jumlah posisi
 
 permissions:
   contents: write
@@ -44,6 +45,7 @@ jobs:
         run: |
           case "${{ inputs.mode || 'propose' }}" in
             full) python tune.py --full ;;
+            portfolio) python tune.py --portfolio ;;
             exits) python tune.py ;;
             realism) python tune.py --realism ;;
             *) python tune.py --propose ;;

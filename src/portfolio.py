@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import numpy as np
 
+from .ranking import rank_value
 from .utils import qty_floor
 
 
@@ -33,7 +34,10 @@ def allocate(picks: list[dict], hcfg: dict, capital: float, risk_per_trade: floa
              scale: float = 1.0) -> tuple[list[dict], float]:
     """picks: kandidat BUY (sudah ada score, atr_pct, sector, entry, sl). Return (picks berbobot, kas).
     scale < 1 memperkecil seluruh bobot (mis. saat S&P 500 bearish); sisanya menjadi kas."""
-    picks = sorted(picks, key=lambda p: -p["score"])[: hcfg["max_positions"]]
+    rank = hcfg.get("rank") or "score"            # urutan saat sinyal melebihi kuota (sama dengan backtest)
+    picks = sorted(picks, key=lambda p: rank_value(rank, p["score"], p.get("atr_pct"), p.get("rs_60"),
+                                                   p.get("ticker", p.get("code", "")), p.get("date", "")))
+    picks = picks[: hcfg["max_positions"]]
     if not picks:
         return [], 1.0
     raw = np.array([max(p["score"], 1) / max(p.get("atr_pct") or 0.03, 0.005) for p in picks], dtype=float)
