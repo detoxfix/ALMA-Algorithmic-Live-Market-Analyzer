@@ -138,6 +138,10 @@ def build_messages(res: dict, dashboard_url: str | None = None, max_buys: int = 
             f"S&amp;P 500 <b>{float(m['bench']):,.2f}</b> ({pct(m['bench_chg'], 2)}) · Pasar <b>{e(m['regime'])}</b>"
             + (f" · USD/IDR {idr(fx).replace('Rp ', '')}" if fx else ""),
             f"Dipantau {m['universe']} saham S&amp;P 500 (market cap ≥ US${cap / 1e9:.0f} miliar)"]
+    val = res.get("validation") or {}
+    if val and not val.get("any_ok"):
+        head.append("⚠️ <b>Belum tervalidasi</b>: belum ada horizon yang terbukti lebih baik dari memegang "
+                    "S&amp;P 500. Anggap sinyal sebagai percobaan, bukan rekomendasi teruji.")
     blocks = ["\n".join(head)]
     mb = monitor_block(res.get("monitor"))
     if mb:
@@ -147,7 +151,9 @@ def build_messages(res: dict, dashboard_url: str | None = None, max_buys: int = 
         blocks.append(pb)
 
     for h, blk in res["horizons"].items():
-        lines = [f"<b>━ {H_NAME.get(h, h)}</b> · kas {pct(blk['cash_weight'], 0, False)} dari bucket"]
+        v = val.get(h) or {}
+        tag = "" if v.get("ok") else (" · <i>belum diuji</i>" if v.get("level") == "BELUM DIUJI" else " · <i>belum tervalidasi</i>")
+        lines = [f"<b>━ {H_NAME.get(h, h)}</b> · kas {pct(blk['cash_weight'], 0, False)} dari bucket{tag}"]
         if blk.get("market_exit_active"):
             lines.append(f"🚨 <b>Aturan keluar aktif</b>: {e(blk['market_exit_active'])}")
         if blk.get("regime_text"):

@@ -164,6 +164,12 @@ def run(ind: dict[str, pd.DataFrame], cfg: dict, horizons=("short", "medium"), p
         hcfg = cfg["horizons"][h]
         res = run_bucket(cands[h], closes, cal, capital, hcfg, cfg)
         base = capital * hcfg["allocation"]
+        split_ = cfg.get("backtest", {}).get("split_date")
+        if split_:                                   # dipakai status validasi per horizon
+            c_ = pd.Timestamp(split_)
+            eqh, exh = res["equity"], res["exposure"]
+            res["stats"]["split"] = {"in_sample": metrics(eqh[eqh.index < c_], exh[exh.index < c_]),
+                                     "out_sample": metrics(eqh[eqh.index >= c_], exh[exh.index >= c_])}
         out["buckets"][h] = {**res["stats"], "allocation": hcfg["allocation"],
                              "equity": _weekly(res["equity"], base)}
         total_eq = total_eq + res["equity"]

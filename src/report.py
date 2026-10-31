@@ -87,6 +87,10 @@ a{color:var(--brass)}
 .intro{color:var(--mute);font-size:14px;margin:12px 0 12px;max-width:78ch}
 .alert{border-left:3px solid var(--sell);background:var(--sell-dim);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:14px}
 .alert b{color:var(--sell)}
+.val{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.3px;padding:3px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.val.no{background:var(--brass-dim);color:var(--brass)}.val.ok{background:var(--buy-dim);color:var(--buy)}.val.na{background:var(--hold-dim);color:var(--hold)}
+.valbox{border-left:3px solid var(--brass);background:var(--brass-dim);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:14px}
+.valbox b{color:var(--brass)}
 .note-cut{border-left:3px solid var(--brass);background:var(--brass-dim);padding:10px 14px;border-radius:0 6px 6px 0;margin:10px 0;font-size:14px}
 
 /* ---------- baris sinyal */
@@ -225,6 +229,8 @@ const $ = id => document.getElementById(id);
 const PILL={"STRONG BUY":"p-sb","BUY":"p-b","SELL":"p-s","STRONG SELL":"p-ss","HOLD":"p-h"};
 const badge = (s,sc) => `<span class="pill ${PILL[s]||"p-x"}">${s==="N/A"?"–":s}${sc!=null?`<small>${sc.toFixed(0)}</small>`:""}</span>`;
 const PCLS={"JUAL SEMUA":"p-ss","JUAL 50%":"p-s","WASPADA":"p-h","TAHAN":"p-x","DATA":"p-x"};
+const VAL = h => (D.validation||{})[h]||{level:"BELUM DIUJI",text:""};
+const valChip = h => {const v=VAL(h);return v.ok?'<span class="val ok">tervalidasi</span>':`<span class="val ${v.level==="BELUM DIUJI"?"na":"no"}">${v.level==="BELUM DIUJI"?"belum diuji":"belum tervalidasi"}</span>`;};
 
 function spark(a,col,w=150,h=38){
   if(!a||a.length<2)return "";
@@ -311,13 +317,14 @@ function hero(){
      <div class="ma"><span>SMA50 <b>${px(last[2])}</b></span><span>SMA200 <b>${px(last[3])}</b></span>${FX()?`<span>USD/IDR <b>${nf.format(FX())}</b></span>`:""}<span>${m.universe} saham dipantau (≥ ${tri(D.params.min_market_cap)})</span></div></div>
    <div class="hchart">${heroChart(S)}<div class="legend"><span><i style="background:var(--brass)"></i>S&amp;P 500</span><span><i style="background:var(--hold)"></i>SMA50</span><span><i style="background:var(--dim)"></i>SMA200</span><span>6 bulan terakhir</span></div></div>
    <div class="verdict"><p class="regime ${reg}">${esc(m.regime)}</p><p>${why}</p>${heroAlarm()}
-     <ul class="plan">${["short","medium","long"].map(h=>{const [t,c]=verdictFor(h);return `<li><span class="h">${H[h]}</span><span class="act ${c}">${esc(t)}</span></li>`;}).join("")}</ul></div>`;
+     <ul class="plan">${["short","medium","long"].map(h=>{const [t,c]=verdictFor(h);return `<li><span class="h">${H[h]}</span><span class="act ${c}">${esc(t)}${valChip(h)}</span></li>`;}).join("")}</ul></div>`;
 }
 const LV={"NORMAL":"ok","LEBIH BAIK":"ok","WASPADA":"warn","BAHAYA":"bad"};
 function heroAlarm(){
   const M=(D.monitor||{}).horizons||{},bad=Object.values(M).filter(v=>v.level==="WASPADA"||v.level==="BAHAYA");
   const P=(D.proposal||{}).horizons||{},pend=Object.values(P).filter(v=>v.status==="usulan"&&!v.applied_at);
   let h="";
+  if(D.validation&&!D.validation.any_ok)h+=`<div class="alarm"><b>Belum tervalidasi</b><span>Belum ada horizon yang terbukti lebih baik dari memegang S&amp;P 500. Anggap sinyal sebagai percobaan, bukan rekomendasi teruji.</span></div>`;
   if(bad.length)h+=`<div class="alarm ${bad.some(v=>v.level==="BAHAYA")?"bad":""}"><b>Alarm kinerja</b><span>${bad.map(v=>esc(v.label+" "+v.level.toLowerCase())).join(", ")}. Lihat tab Track record.</span></div>`;
   if(pend.length)h+=`<div class="alarm"><b>Usulan baru</b><span>${pend.length} usulan parameter menunggu keputusan Anda (tab Track record).</span></div>`;
   return h;
@@ -377,6 +384,7 @@ function rulesText(r){
 function renderBuy(h){
   const b=D.horizons[h];
   let html=`<p class="intro">${esc(b.label)}. Alokasi ${pctp(b.allocation,0)} modal, ${b.buys.length} posisi, kas ${pctp(b.cash_weight,0)} dari porsi ini. ${rulesText(b.rules)}</p>`;
+  const v=VAL(h); if(!v.ok)html+=`<div class="valbox"><b>${v.level==="BELUM DIUJI"?"Belum diuji.":"Belum tervalidasi."}</b> ${esc(v.text)}</div>`;
   if(b.market_exit_active)html+=`<div class="alert"><b>Aturan keluar aktif.</b> ${esc(b.market_exit_active)}</div>`;
   if(b.regime_text)html+=`<div class="note-cut">Porsi dikurangi menjadi <b>${pctp(b.regime_scale,0)}</b> karena ${esc(b.regime_text)}. Sisanya ditahan sebagai kas.</div>`;
   html+=b.buys.length?`<div class="list">${b.buys.map(buyRow).join("")}</div>`
@@ -488,7 +496,9 @@ function renderRealism(R){
 function renderBt(){
   const b=D.backtest;
   if(!b||!b.results){$("p-bt").innerHTML='<div class="empty">Backtest belum dijalankan.</div>';return;}
-  let h=renderPortfolio(b.portfolio)+`<h2>Backtest per transaksi</h2><p class="muted">Dijalankan ${esc(b.generated_at)}. Masuk saat skor menembus ambang BUY, keluar via TP/SL/time-stop, biaya termasuk.</p><p class="note">Asumsi: ${esc(assumeText(b.assumptions))}</p>
+  const V=D.validation||{};
+  let h=`<h2>Status validasi</h2><p class="muted">Sebuah horizon dianggap tervalidasi bila simulasi akunnya di periode out-of-sample (sejak ${esc(D.params.split_date||"")}) untung dan Sharpe-nya lebih tinggi dari S&amp;P 500 beli &amp; tahan. Dihitung ulang otomatis setiap backtest.</p><div class="mon">${["short","medium","long"].map(k=>{const v=VAL(k);return `<div class="card"><h4>${H[k]}</h4><div class="lv ${v.ok?"ok":v.level==="BELUM DIUJI"?"na":"warn"}">${esc(v.level)}</div><p>${esc(v.text)}</p></div>`;}).join("")}</div>`;
+  h+=renderPortfolio(b.portfolio)+`<h2>Backtest per transaksi</h2><p class="muted">Dijalankan ${esc(b.generated_at)}. Masuk saat skor menembus ambang BUY, keluar via TP/SL/time-stop, biaya termasuk.</p><p class="note">Asumsi: ${esc(assumeText(b.assumptions))}</p>
   <div class="tbl"><table><tr><th>Horizon</th><th>Transaksi</th><th>Win rate</th><th>Rata-rata</th><th>Profit factor</th><th>Rata hari</th></tr>`;
   for(const [k,s] of Object.entries(b.results)){h+=statRow(H[k]+" (semua)",s);if(s.in_sample)h+=statRow(H[k]+" · in-sample",s.in_sample);if(s.out_sample)h+=statRow(H[k]+" · out-of-sample",s.out_sample);if(s.strong_only)h+=statRow(H[k]+" (STRONG BUY saja)",s.strong_only);}
   h+=`</table></div>`;

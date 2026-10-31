@@ -20,7 +20,7 @@ import yaml
 
 from src import backtest as bt
 from src import data as D
-from src import archive, loader, monitor, notify, portsim, positions, report, tracker
+from src import archive, loader, monitor, notify, portsim, positions, report, tracker, validation
 from src.indicators import add_indicators
 from src.portfolio import allocate
 from src.sim import bench_up, market_flag
@@ -66,7 +66,7 @@ def mkt_exit_text(hcfg: dict, bench: pd.Series) -> str | None:
 
 def config_hash(cfg: dict) -> str:
     """Sidik jari parameter yang memengaruhi backtest (berubah -> backtest diulang)."""
-    return hashlib.md5(json.dumps({"h": {h: cfg["horizons"][h] for h in ("short", "medium")}, "v": 1,
+    return hashlib.md5(json.dumps({"h": {h: cfg["horizons"][h] for h in ("short", "medium")}, "v": 2,
                                    "cap": cfg["capital"], "risk": cfg["risk_per_trade"], "fees": cfg["fees"],
                                    "mkt": cfg.get("market"), "uni": cfg["universe"],
                                    "bt": {k: v for k, v in cfg.get("backtest", {}).items()
@@ -308,6 +308,7 @@ def run(cfg: dict, demo: bool = False, backtest_mode: str = "auto") -> dict:
         "monitor": mon,
         "proposal": proposal,
         "backtest": bt_res,
+        "validation": validation.status(bt_res),
         "sources": sources,
     }
     return result

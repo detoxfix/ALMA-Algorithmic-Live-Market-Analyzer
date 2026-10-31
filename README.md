@@ -139,6 +139,19 @@ per posisi ≤ 1% modal.
 - **Sisa bias**: saham yang sudah delisting (diakuisisi/bangkrut) tidak ada di data gratis; jumlah saham beredar
   memakai angka terkini. Anggap hasil backtest sedikit optimistis.
 
+## Status validasi (otomatis)
+
+Setiap backtest, tiap horizon diberi status:
+- **TERVALIDASI**: simulasi akun di periode out-of-sample untung **dan** Sharpe-nya lebih tinggi dari S&P 500
+  beli & tahan pada periode yang sama.
+- **BELUM TERVALIDASI**: selain itu. Sinyal tetap diterbitkan sebagai percobaan (paper trading), dengan label
+  di dashboard, Telegram, dan aplikasi laptop.
+- **BELUM DIUJI**: jangka panjang (butuh fundamental historis).
+
+Per 1 Nov 2026, jangka pendek & menengah **belum tervalidasi**: tuning tingkat akun (`python tune.py --portfolio`,
+aturan pilih saham × jumlah posisi × set parameter) tidak menemukan kombinasi yang mengalahkan S&P 500 di
+out-of-sample. Lihat `docs/data/tuning.json` bagian `portfolio`.
+
 ## Belajar dari kesalahan (dengan persetujuan Anda)
 
 - **Alarm penyimpangan** (`src/monitor.py`): hasil rekomendasi sungguhan dibandingkan sebaran hasil backtest.
@@ -162,6 +175,8 @@ src/indicators.py       EMA/SMA/RSI/MACD/ATR/ADX/volume/momentum
 src/signals.py          skor & sinyal 3 horizon + alasan
 src/risk.py             area beli, TP, SL, lama hold
 src/portfolio.py        bobot & jumlah saham
+src/ranking.py          urutan pilih saham saat sinyal melebihi kuota posisi
+src/validation.py       status validasi per horizon vs S&P 500
 src/sim.py              simulasi transaksi (track record & backtest)
 src/backtest.py         backtest per transaksi
 src/portsim.py          simulasi portofolio

@@ -168,6 +168,17 @@ def test_ranking():
     assert sorted(p["code"] for p in out) == ["B", "C"]
 
 
+def test_validation():
+    from src.validation import status
+    bt = {"portfolio": {"split": {"bench_out_sample": {"total_return": 0.30, "sharpe": 0.9}},
+                        "buckets": {"short": {"split": {"out_sample": {"total_return": 0.25, "sharpe": 1.1, "start": "2024-11-01"}}},
+                                    "medium": {"split": {"out_sample": {"total_return": -0.05, "sharpe": -0.2}}}}}}
+    v = status(bt)
+    assert v["short"]["level"] == "TERVALIDASI" and v["medium"]["level"] == "BELUM TERVALIDASI"
+    assert v["long"]["level"] == "BELUM DIUJI" and v["any_ok"]
+    assert status(None)["any_ok"] is False
+
+
 def test_monitor():
     from src.monitor import check, streak_prob
     assert abs(streak_prob(3, 3, 0.5) - 0.125) < 1e-9 and streak_prob(5, 1, 0.0) == 0.0

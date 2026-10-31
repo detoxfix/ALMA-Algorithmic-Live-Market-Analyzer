@@ -394,6 +394,9 @@ def gui():
             else:
                 act.configure(text="Tidak beli", fg=C["ink"])
                 txt = f"{b['n_held']} sinyal tertahan filter" if b.get("n_held") else "Belum ada sinyal beli"
+            v = (d.get("validation") or {}).get(h) or {}
+            if not v.get("ok"):
+                txt += "\n" + ("belum diuji" if v.get("level") == "BELUM DIUJI" else "belum tervalidasi vs S&P 500")
             meta.configure(text=txt)
         pos = d.get("positions") or []
         if pos:
