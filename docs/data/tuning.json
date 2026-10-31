@@ -12394,5 +12394,5813 @@
    ]
   }
  },
- "seconds": 576
+ "seconds": 576,
+ "portfolio": {
+  "generated_at": "2026-11-01 05:10",
+  "demo": false,
+  "universe": 485,
+  "split_date": "2024-11-01",
+  "start": "2022-11-11",
+  "bench": {
+   "in_sample": {
+    "total_return": 0.428888,
+    "cagr": 0.198476,
+    "max_drawdown": -0.102766,
+    "sharpe": 1.438356,
+    "avg_exposure": null
+   },
+   "out_sample": {
+    "total_return": 0.323151,
+    "cagr": 0.150836,
+    "max_drawdown": -0.189022,
+    "sharpe": 0.956136,
+    "avg_exposure": null
+   },
+   "full": {
+    "total_return": 0.898373,
+    "cagr": 0.175362,
+    "max_drawdown": -0.189022,
+    "sharpe": 1.173845,
+    "avg_exposure": null
+   }
+  },
+  "horizons": {
+   "short": {
+    "current": {
+     "set": "config sekarang",
+     "params": {},
+     "rank": "score",
+     "max_positions": 5,
+     "trades": 346,
+     "candidates_is": 5952,
+     "is": {
+      "total_return": -0.010477,
+      "cagr": -0.005329,
+      "max_drawdown": -0.204447,
+      "sharpe": 0.034648,
+      "avg_exposure": 0.75077
+     },
+     "oos": {
+      "total_return": -0.165689,
+      "cagr": -0.086878,
+      "max_drawdown": -0.29268,
+      "sharpe": -0.391757,
+      "avg_exposure": 0.750206
+     },
+     "full": {
+      "total_return": -0.164131,
+      "cagr": -0.044186,
+      "max_drawdown": -0.29268,
+      "sharpe": -0.187136,
+      "avg_exposure": 0.750487
+     }
+    },
+    "best_is": {
+     "set": "grid #1",
+     "params": {
+      "min_score": 60,
+      "market_filter": "sma50",
+      "trend_filter": "none",
+      "entry_mode": "open",
+      "sl_atr": 2.5,
+      "max_sl_pct": 0.1,
+      "rr": [
+       2.0,
+       3.0
+      ],
+      "trail_ma": 0,
+      "hold_max_days": 15
+     },
+     "rank": "score",
+     "max_positions": 20,
+     "trades": 1336,
+     "candidates_is": 6203,
+     "is": {
+      "total_return": 0.201279,
+      "cagr": 0.097496,
+      "max_drawdown": -0.11998,
+      "sharpe": 0.86733,
+      "avg_exposure": 0.742628
+     },
+     "oos": {
+      "total_return": -0.063972,
+      "cagr": -0.032624,
+      "max_drawdown": -0.1351,
+      "sharpe": -0.214472,
+      "avg_exposure": 0.751805
+     },
+     "full": {
+      "total_return": 0.136211,
+      "cagr": 0.032713,
+      "max_drawdown": -0.1351,
+      "sharpe": 0.33225,
+      "avg_exposure": 0.74724
+     }
+    },
+    "verdict": {
+     "oos_positive": false,
+     "oos_sharpe_beats_bench": false,
+     "oos_return_beats_bench": false
+    },
+    "top_is": [
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 20,
+      "trades": 1336,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.201279,
+       "cagr": 0.097496,
+       "max_drawdown": -0.11998,
+       "sharpe": 0.86733,
+       "avg_exposure": 0.742628
+      },
+      "oos": {
+       "total_return": -0.063972,
+       "cagr": -0.032624,
+       "max_drawdown": -0.1351,
+       "sharpe": -0.214472,
+       "avg_exposure": 0.751805
+      },
+      "full": {
+       "total_return": 0.136211,
+       "cagr": 0.032713,
+       "max_drawdown": -0.1351,
+       "sharpe": 0.33225,
+       "avg_exposure": 0.74724
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 10,
+      "trades": 664,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.21092,
+       "cagr": 0.101955,
+       "max_drawdown": -0.106555,
+       "sharpe": 0.814127,
+       "avg_exposure": 0.753983
+      },
+      "oos": {
+       "total_return": 0.056545,
+       "cagr": 0.027981,
+       "max_drawdown": -0.164694,
+       "sharpe": 0.261445,
+       "avg_exposure": 0.75497
+      },
+      "full": {
+       "total_return": 0.289717,
+       "cagr": 0.066234,
+       "max_drawdown": -0.164694,
+       "sharpe": 0.532309,
+       "avg_exposure": 0.754479
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 15,
+      "trades": 1000,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.166458,
+       "cagr": 0.08124,
+       "max_drawdown": -0.117071,
+       "sharpe": 0.721871,
+       "avg_exposure": 0.745938
+      },
+      "oos": {
+       "total_return": -0.033853,
+       "cagr": -0.01713,
+       "max_drawdown": -0.160078,
+       "sharpe": -0.063571,
+       "avg_exposure": 0.754406
+      },
+      "full": {
+       "total_return": 0.144279,
+       "cagr": 0.034556,
+       "max_drawdown": -0.160078,
+       "sharpe": 0.333366,
+       "avg_exposure": 0.750193
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 5,
+      "trades": 335,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.193289,
+       "cagr": 0.093786,
+       "max_drawdown": -0.146976,
+       "sharpe": 0.682556,
+       "avg_exposure": 0.756011
+      },
+      "oos": {
+       "total_return": -0.158013,
+       "cagr": -0.082673,
+       "max_drawdown": -0.219892,
+       "sharpe": -0.370826,
+       "avg_exposure": 0.745616
+      },
+      "full": {
+       "total_return": 0.014566,
+       "cagr": 0.003652,
+       "max_drawdown": -0.219892,
+       "sharpe": 0.105998,
+       "avg_exposure": 0.750787
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 5,
+      "trades": 336,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.182517,
+       "cagr": 0.088766,
+       "max_drawdown": -0.120685,
+       "sharpe": 0.660067,
+       "avg_exposure": 0.764015
+      },
+      "oos": {
+       "total_return": 0.035449,
+       "cagr": 0.017631,
+       "max_drawdown": -0.230399,
+       "sharpe": 0.189867,
+       "avg_exposure": 0.769447
+      },
+      "full": {
+       "total_return": 0.228661,
+       "cagr": 0.053278,
+       "max_drawdown": -0.230399,
+       "sharpe": 0.415851,
+       "avg_exposure": 0.766744
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 15,
+      "trades": 1028,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.113883,
+       "cagr": 0.056237,
+       "max_drawdown": -0.106877,
+       "sharpe": 0.622083,
+       "avg_exposure": 0.746864
+      },
+      "oos": {
+       "total_return": -0.153002,
+       "cagr": -0.079937,
+       "max_drawdown": -0.193265,
+       "sharpe": -0.767351,
+       "avg_exposure": 0.762465
+      },
+      "full": {
+       "total_return": -0.055856,
+       "cagr": -0.014384,
+       "max_drawdown": -0.206613,
+       "sharpe": -0.097292,
+       "avg_exposure": 0.754704
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 5,
+      "trades": 340,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.12982,
+       "cagr": 0.063876,
+       "max_drawdown": -0.125263,
+       "sharpe": 0.527275,
+       "avg_exposure": 0.764558
+      },
+      "oos": {
+       "total_return": 0.003939,
+       "cagr": 0.001974,
+       "max_drawdown": -0.163939,
+       "sharpe": 0.094058,
+       "avg_exposure": 0.766155
+      },
+      "full": {
+       "total_return": 0.170048,
+       "cagr": 0.04038,
+       "max_drawdown": -0.163939,
+       "sharpe": 0.338234,
+       "avg_exposure": 0.765361
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 20,
+      "trades": 1361,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.092937,
+       "cagr": 0.046114,
+       "max_drawdown": -0.11336,
+       "sharpe": 0.524989,
+       "avg_exposure": 0.746318
+      },
+      "oos": {
+       "total_return": -0.138658,
+       "cagr": -0.072152,
+       "max_drawdown": -0.185686,
+       "sharpe": -0.719274,
+       "avg_exposure": 0.761622
+      },
+      "full": {
+       "total_return": -0.051633,
+       "cagr": -0.013274,
+       "max_drawdown": -0.185686,
+       "sharpe": -0.090869,
+       "avg_exposure": 0.754008
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 5,
+      "trades": 341,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.13008,
+       "cagr": 0.064001,
+       "max_drawdown": -0.109887,
+       "sharpe": 0.515532,
+       "avg_exposure": 0.764151
+      },
+      "oos": {
+       "total_return": 0.04866,
+       "cagr": 0.024125,
+       "max_drawdown": -0.234798,
+       "sharpe": 0.222726,
+       "avg_exposure": 0.762069
+      },
+      "full": {
+       "total_return": 0.184487,
+       "cagr": 0.043602,
+       "max_drawdown": -0.234798,
+       "sharpe": 0.345379,
+       "avg_exposure": 0.763104
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 10,
+      "trades": 667,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.112948,
+       "cagr": 0.055787,
+       "max_drawdown": -0.119137,
+       "sharpe": 0.503902,
+       "avg_exposure": 0.759055
+      },
+      "oos": {
+       "total_return": 0.029388,
+       "cagr": 0.014638,
+       "max_drawdown": -0.095726,
+       "sharpe": 0.178274,
+       "avg_exposure": 0.769658
+      },
+      "full": {
+       "total_return": 0.146713,
+       "cagr": 0.035111,
+       "max_drawdown": -0.119137,
+       "sharpe": 0.339241,
+       "avg_exposure": 0.764383
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 10,
+      "trades": 679,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.092434,
+       "cagr": 0.04587,
+       "max_drawdown": -0.127565,
+       "sharpe": 0.428754,
+       "avg_exposure": 0.757405
+      },
+      "oos": {
+       "total_return": 0.008416,
+       "cagr": 0.004214,
+       "max_drawdown": -0.15447,
+       "sharpe": 0.101316,
+       "avg_exposure": 0.758856
+      },
+      "full": {
+       "total_return": 0.117053,
+       "cagr": 0.028295,
+       "max_drawdown": -0.15447,
+       "sharpe": 0.276428,
+       "avg_exposure": 0.758134
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 20,
+      "trades": 1351,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.070755,
+       "cagr": 0.035289,
+       "max_drawdown": -0.131777,
+       "sharpe": 0.366636,
+       "avg_exposure": 0.749093
+      },
+      "oos": {
+       "total_return": -0.00586,
+       "cagr": -0.002944,
+       "max_drawdown": -0.118747,
+       "sharpe": 0.032486,
+       "avg_exposure": 0.753379
+      },
+      "full": {
+       "total_return": 0.071039,
+       "cagr": 0.01745,
+       "max_drawdown": -0.131777,
+       "sharpe": 0.209402,
+       "avg_exposure": 0.751247
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 20,
+      "trades": 1354,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.073206,
+       "cagr": 0.03649,
+       "max_drawdown": -0.133526,
+       "sharpe": 0.363497,
+       "avg_exposure": 0.744678
+      },
+      "oos": {
+       "total_return": -0.092773,
+       "cagr": -0.047675,
+       "max_drawdown": -0.148316,
+       "sharpe": -0.338477,
+       "avg_exposure": 0.756813
+      },
+      "full": {
+       "total_return": -0.014448,
+       "cagr": -0.003662,
+       "max_drawdown": -0.156229,
+       "sharpe": 0.029752,
+       "avg_exposure": 0.750776
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 10,
+      "trades": 682,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.071081,
+       "cagr": 0.035449,
+       "max_drawdown": -0.117001,
+       "sharpe": 0.336943,
+       "avg_exposure": 0.754493
+      },
+      "oos": {
+       "total_return": -0.035,
+       "cagr": -0.017716,
+       "max_drawdown": -0.190249,
+       "sharpe": -0.03908,
+       "avg_exposure": 0.756258
+      },
+      "full": {
+       "total_return": 0.041969,
+       "cagr": 0.010417,
+       "max_drawdown": -0.190249,
+       "sharpe": 0.144252,
+       "avg_exposure": 0.755379
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 10,
+      "trades": 673,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.061206,
+       "cagr": 0.030595,
+       "max_drawdown": -0.129354,
+       "sharpe": 0.310475,
+       "avg_exposure": 0.751068
+      },
+      "oos": {
+       "total_return": 0.086046,
+       "cagr": 0.042283,
+       "max_drawdown": -0.11064,
+       "sharpe": 0.394715,
+       "avg_exposure": 0.77211
+      },
+      "full": {
+       "total_return": 0.172067,
+       "cagr": 0.040833,
+       "max_drawdown": -0.129354,
+       "sharpe": 0.387457,
+       "avg_exposure": 0.761642
+      }
+     }
+    ],
+    "all": [
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 5,
+      "trades": 346,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.010477,
+       "cagr": -0.005329,
+       "max_drawdown": -0.204447,
+       "sharpe": 0.034648,
+       "avg_exposure": 0.75077
+      },
+      "oos": {
+       "total_return": -0.165689,
+       "cagr": -0.086878,
+       "max_drawdown": -0.29268,
+       "sharpe": -0.391757,
+       "avg_exposure": 0.750206
+      },
+      "full": {
+       "total_return": -0.164131,
+       "cagr": -0.044186,
+       "max_drawdown": -0.29268,
+       "sharpe": -0.187136,
+       "avg_exposure": 0.750487
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 10,
+      "trades": 682,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.071081,
+       "cagr": 0.035449,
+       "max_drawdown": -0.117001,
+       "sharpe": 0.336943,
+       "avg_exposure": 0.754493
+      },
+      "oos": {
+       "total_return": -0.035,
+       "cagr": -0.017716,
+       "max_drawdown": -0.190249,
+       "sharpe": -0.03908,
+       "avg_exposure": 0.756258
+      },
+      "full": {
+       "total_return": 0.041969,
+       "cagr": 0.010417,
+       "max_drawdown": -0.190249,
+       "sharpe": 0.144252,
+       "avg_exposure": 0.755379
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 15,
+      "trades": 1017,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.022488,
+       "cagr": 0.011345,
+       "max_drawdown": -0.131169,
+       "sharpe": 0.153978,
+       "avg_exposure": 0.746969
+      },
+      "oos": {
+       "total_return": -0.08627,
+       "cagr": -0.044256,
+       "max_drawdown": -0.172519,
+       "sharpe": -0.267054,
+       "avg_exposure": 0.758657
+      },
+      "full": {
+       "total_return": -0.051227,
+       "cagr": -0.013168,
+       "max_drawdown": -0.172519,
+       "sharpe": -0.038797,
+       "avg_exposure": 0.752842
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 20,
+      "trades": 1354,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.073206,
+       "cagr": 0.03649,
+       "max_drawdown": -0.133526,
+       "sharpe": 0.363497,
+       "avg_exposure": 0.744678
+      },
+      "oos": {
+       "total_return": -0.092773,
+       "cagr": -0.047675,
+       "max_drawdown": -0.148316,
+       "sharpe": -0.338477,
+       "avg_exposure": 0.756813
+      },
+      "full": {
+       "total_return": -0.014448,
+       "cagr": -0.003662,
+       "max_drawdown": -0.156229,
+       "sharpe": 0.029752,
+       "avg_exposure": 0.750776
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 5,
+      "trades": 340,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.12982,
+       "cagr": 0.063876,
+       "max_drawdown": -0.125263,
+       "sharpe": 0.527275,
+       "avg_exposure": 0.764558
+      },
+      "oos": {
+       "total_return": 0.003939,
+       "cagr": 0.001974,
+       "max_drawdown": -0.163939,
+       "sharpe": 0.094058,
+       "avg_exposure": 0.766155
+      },
+      "full": {
+       "total_return": 0.170048,
+       "cagr": 0.04038,
+       "max_drawdown": -0.163939,
+       "sharpe": 0.338234,
+       "avg_exposure": 0.765361
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 10,
+      "trades": 673,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.061206,
+       "cagr": 0.030595,
+       "max_drawdown": -0.129354,
+       "sharpe": 0.310475,
+       "avg_exposure": 0.751068
+      },
+      "oos": {
+       "total_return": 0.086046,
+       "cagr": 0.042283,
+       "max_drawdown": -0.11064,
+       "sharpe": 0.394715,
+       "avg_exposure": 0.77211
+      },
+      "full": {
+       "total_return": 0.172067,
+       "cagr": 0.040833,
+       "max_drawdown": -0.129354,
+       "sharpe": 0.387457,
+       "avg_exposure": 0.761642
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 15,
+      "trades": 1004,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.056462,
+       "cagr": 0.028255,
+       "max_drawdown": -0.123852,
+       "sharpe": 0.305418,
+       "avg_exposure": 0.754304
+      },
+      "oos": {
+       "total_return": 0.073676,
+       "cagr": 0.03631,
+       "max_drawdown": -0.109942,
+       "sharpe": 0.363186,
+       "avg_exposure": 0.76984
+      },
+      "full": {
+       "total_return": 0.148374,
+       "cagr": 0.035488,
+       "max_drawdown": -0.123852,
+       "sharpe": 0.361865,
+       "avg_exposure": 0.762111
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 20,
+      "trades": 1334,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.015646,
+       "cagr": -0.007968,
+       "max_drawdown": -0.106259,
+       "sharpe": -0.020664,
+       "avg_exposure": 0.746881
+      },
+      "oos": {
+       "total_return": 0.050921,
+       "cagr": 0.025232,
+       "max_drawdown": -0.120359,
+       "sharpe": 0.278175,
+       "avg_exposure": 0.760068
+      },
+      "full": {
+       "total_return": 0.044559,
+       "cagr": 0.011049,
+       "max_drawdown": -0.120359,
+       "sharpe": 0.155172,
+       "avg_exposure": 0.753508
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 5,
+      "trades": 353,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.074399,
+       "cagr": -0.038461,
+       "max_drawdown": -0.199771,
+       "sharpe": -0.307515,
+       "avg_exposure": 0.734021
+      },
+      "oos": {
+       "total_return": -0.145019,
+       "cagr": -0.075597,
+       "max_drawdown": -0.234948,
+       "sharpe": -0.563964,
+       "avg_exposure": 0.770303
+      },
+      "full": {
+       "total_return": -0.213686,
+       "cagr": -0.058798,
+       "max_drawdown": -0.242382,
+       "sharpe": -0.458137,
+       "avg_exposure": 0.752253
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 10,
+      "trades": 692,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.025173,
+       "cagr": -0.01285,
+       "max_drawdown": -0.126006,
+       "sharpe": -0.076474,
+       "avg_exposure": 0.744649
+      },
+      "oos": {
+       "total_return": -0.121394,
+       "cagr": -0.062868,
+       "max_drawdown": -0.196796,
+       "sharpe": -0.526922,
+       "avg_exposure": 0.767642
+      },
+      "full": {
+       "total_return": -0.14375,
+       "cagr": -0.038364,
+       "max_drawdown": -0.196796,
+       "sharpe": -0.313648,
+       "avg_exposure": 0.756203
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 15,
+      "trades": 1023,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.042674,
+       "cagr": 0.021425,
+       "max_drawdown": -0.117516,
+       "sharpe": 0.2693,
+       "avg_exposure": 0.746997
+      },
+      "oos": {
+       "total_return": -0.122576,
+       "cagr": -0.063501,
+       "max_drawdown": -0.179207,
+       "sharpe": -0.593509,
+       "avg_exposure": 0.763916
+      },
+      "full": {
+       "total_return": -0.083294,
+       "cagr": -0.021684,
+       "max_drawdown": -0.180531,
+       "sharpe": -0.172109,
+       "avg_exposure": 0.755499
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 20,
+      "trades": 1361,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.022665,
+       "cagr": 0.011434,
+       "max_drawdown": -0.125542,
+       "sharpe": 0.169694,
+       "avg_exposure": 0.744615
+      },
+      "oos": {
+       "total_return": -0.108167,
+       "cagr": -0.055816,
+       "max_drawdown": -0.166664,
+       "sharpe": -0.539849,
+       "avg_exposure": 0.761287
+      },
+      "full": {
+       "total_return": -0.082285,
+       "cagr": -0.021412,
+       "max_drawdown": -0.166664,
+       "sharpe": -0.180462,
+       "avg_exposure": 0.752993
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 5,
+      "trades": 352,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.106337,
+       "cagr": -0.055437,
+       "max_drawdown": -0.237494,
+       "sharpe": -0.276304,
+       "avg_exposure": 0.76061
+      },
+      "oos": {
+       "total_return": 0.092703,
+       "cagr": 0.045484,
+       "max_drawdown": -0.235353,
+       "sharpe": 0.304965,
+       "avg_exposure": 0.732984
+      },
+      "full": {
+       "total_return": -0.019504,
+       "cagr": -0.004953,
+       "max_drawdown": -0.237494,
+       "sharpe": 0.080209,
+       "avg_exposure": 0.746727
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 10,
+      "trades": 698,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.066776,
+       "cagr": -0.034451,
+       "max_drawdown": -0.145946,
+       "sharpe": -0.186744,
+       "avg_exposure": 0.751976
+      },
+      "oos": {
+       "total_return": 0.219023,
+       "cagr": 0.104469,
+       "max_drawdown": -0.15794,
+       "sharpe": 0.607408,
+       "avg_exposure": 0.745966
+      },
+      "full": {
+       "total_return": 0.135871,
+       "cagr": 0.032635,
+       "max_drawdown": -0.15794,
+       "sharpe": 0.275158,
+       "avg_exposure": 0.748956
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 15,
+      "trades": 1040,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.071099,
+       "cagr": -0.036723,
+       "max_drawdown": -0.154179,
+       "sharpe": -0.225944,
+       "avg_exposure": 0.747798
+      },
+      "oos": {
+       "total_return": 0.227414,
+       "cagr": 0.108277,
+       "max_drawdown": -0.121266,
+       "sharpe": 0.698432,
+       "avg_exposure": 0.748637
+      },
+      "full": {
+       "total_return": 0.146837,
+       "cagr": 0.035139,
+       "max_drawdown": -0.154179,
+       "sharpe": 0.306263,
+       "avg_exposure": 0.74822
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 20,
+      "trades": 1377,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.002898,
+       "cagr": 0.001469,
+       "max_drawdown": -0.139479,
+       "sharpe": 0.073419,
+       "avg_exposure": 0.746728
+      },
+      "oos": {
+       "total_return": 0.074381,
+       "cagr": 0.036651,
+       "max_drawdown": -0.12186,
+       "sharpe": 0.3113,
+       "avg_exposure": 0.750015
+      },
+      "full": {
+       "total_return": 0.082388,
+       "cagr": 0.020157,
+       "max_drawdown": -0.139479,
+       "sharpe": 0.213424,
+       "avg_exposure": 0.74838
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 5,
+      "trades": 345,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.06636,
+       "cagr": 0.033131,
+       "max_drawdown": -0.148884,
+       "sharpe": 0.302158,
+       "avg_exposure": 0.760243
+      },
+      "oos": {
+       "total_return": 0.115433,
+       "cagr": 0.056339,
+       "max_drawdown": -0.163628,
+       "sharpe": 0.398724,
+       "avg_exposure": 0.774251
+      },
+      "full": {
+       "total_return": 0.193968,
+       "cagr": 0.045701,
+       "max_drawdown": -0.163628,
+       "sharpe": 0.359854,
+       "avg_exposure": 0.767282
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 10,
+      "trades": 683,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.053055,
+       "cagr": -0.027276,
+       "max_drawdown": -0.17881,
+       "sharpe": -0.149174,
+       "avg_exposure": 0.751827
+      },
+      "oos": {
+       "total_return": 0.05157,
+       "cagr": 0.025549,
+       "max_drawdown": -0.186884,
+       "sharpe": 0.253527,
+       "avg_exposure": 0.764416
+      },
+      "full": {
+       "total_return": -0.00674,
+       "cagr": -0.001703,
+       "max_drawdown": -0.186884,
+       "sharpe": 0.053936,
+       "avg_exposure": 0.758154
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 15,
+      "trades": 1018,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": -0.01259,
+       "cagr": -0.006407,
+       "max_drawdown": -0.161496,
+       "sharpe": 0.004621,
+       "avg_exposure": 0.745456
+      },
+      "oos": {
+       "total_return": -0.010669,
+       "cagr": -0.005367,
+       "max_drawdown": -0.136291,
+       "sharpe": 0.019073,
+       "avg_exposure": 0.762734
+      },
+      "full": {
+       "total_return": -0.016035,
+       "cagr": -0.004066,
+       "max_drawdown": -0.161496,
+       "sharpe": 0.027183,
+       "avg_exposure": 0.754138
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 20,
+      "trades": 1345,
+      "candidates_is": 5952,
+      "is": {
+       "total_return": 0.003795,
+       "cagr": 0.001923,
+       "max_drawdown": -0.146248,
+       "sharpe": 0.074379,
+       "avg_exposure": 0.744042
+      },
+      "oos": {
+       "total_return": -0.004824,
+       "cagr": -0.002423,
+       "max_drawdown": -0.124246,
+       "sharpe": 0.035505,
+       "avg_exposure": 0.760665
+      },
+      "full": {
+       "total_return": 0.003633,
+       "cagr": 0.000915,
+       "max_drawdown": -0.146248,
+       "sharpe": 0.065324,
+       "avg_exposure": 0.752395
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 5,
+      "trades": 335,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.193289,
+       "cagr": 0.093786,
+       "max_drawdown": -0.146976,
+       "sharpe": 0.682556,
+       "avg_exposure": 0.756011
+      },
+      "oos": {
+       "total_return": -0.158013,
+       "cagr": -0.082673,
+       "max_drawdown": -0.219892,
+       "sharpe": -0.370826,
+       "avg_exposure": 0.745616
+      },
+      "full": {
+       "total_return": 0.014566,
+       "cagr": 0.003652,
+       "max_drawdown": -0.219892,
+       "sharpe": 0.105998,
+       "avg_exposure": 0.750787
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 10,
+      "trades": 664,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.21092,
+       "cagr": 0.101955,
+       "max_drawdown": -0.106555,
+       "sharpe": 0.814127,
+       "avg_exposure": 0.753983
+      },
+      "oos": {
+       "total_return": 0.056545,
+       "cagr": 0.027981,
+       "max_drawdown": -0.164694,
+       "sharpe": 0.261445,
+       "avg_exposure": 0.75497
+      },
+      "full": {
+       "total_return": 0.289717,
+       "cagr": 0.066234,
+       "max_drawdown": -0.164694,
+       "sharpe": 0.532309,
+       "avg_exposure": 0.754479
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 15,
+      "trades": 1000,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.166458,
+       "cagr": 0.08124,
+       "max_drawdown": -0.117071,
+       "sharpe": 0.721871,
+       "avg_exposure": 0.745938
+      },
+      "oos": {
+       "total_return": -0.033853,
+       "cagr": -0.01713,
+       "max_drawdown": -0.160078,
+       "sharpe": -0.063571,
+       "avg_exposure": 0.754406
+      },
+      "full": {
+       "total_return": 0.144279,
+       "cagr": 0.034556,
+       "max_drawdown": -0.160078,
+       "sharpe": 0.333366,
+       "avg_exposure": 0.750193
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "score",
+      "max_positions": 20,
+      "trades": 1336,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.201279,
+       "cagr": 0.097496,
+       "max_drawdown": -0.11998,
+       "sharpe": 0.86733,
+       "avg_exposure": 0.742628
+      },
+      "oos": {
+       "total_return": -0.063972,
+       "cagr": -0.032624,
+       "max_drawdown": -0.1351,
+       "sharpe": -0.214472,
+       "avg_exposure": 0.751805
+      },
+      "full": {
+       "total_return": 0.136211,
+       "cagr": 0.032713,
+       "max_drawdown": -0.1351,
+       "sharpe": 0.33225,
+       "avg_exposure": 0.74724
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 5,
+      "trades": 336,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.182517,
+       "cagr": 0.088766,
+       "max_drawdown": -0.120685,
+       "sharpe": 0.660067,
+       "avg_exposure": 0.764015
+      },
+      "oos": {
+       "total_return": 0.035449,
+       "cagr": 0.017631,
+       "max_drawdown": -0.230399,
+       "sharpe": 0.189867,
+       "avg_exposure": 0.769447
+      },
+      "full": {
+       "total_return": 0.228661,
+       "cagr": 0.053278,
+       "max_drawdown": -0.230399,
+       "sharpe": 0.415851,
+       "avg_exposure": 0.766744
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 10,
+      "trades": 667,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.112948,
+       "cagr": 0.055787,
+       "max_drawdown": -0.119137,
+       "sharpe": 0.503902,
+       "avg_exposure": 0.759055
+      },
+      "oos": {
+       "total_return": 0.029388,
+       "cagr": 0.014638,
+       "max_drawdown": -0.095726,
+       "sharpe": 0.178274,
+       "avg_exposure": 0.769658
+      },
+      "full": {
+       "total_return": 0.146713,
+       "cagr": 0.035111,
+       "max_drawdown": -0.119137,
+       "sharpe": 0.339241,
+       "avg_exposure": 0.764383
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 15,
+      "trades": 1008,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.054334,
+       "cagr": 0.027204,
+       "max_drawdown": -0.130792,
+       "sharpe": 0.292,
+       "avg_exposure": 0.754288
+      },
+      "oos": {
+       "total_return": -0.0183,
+       "cagr": -0.009224,
+       "max_drawdown": -0.101189,
+       "sharpe": -0.019294,
+       "avg_exposure": 0.761343
+      },
+      "full": {
+       "total_return": 0.047589,
+       "cagr": 0.011788,
+       "max_drawdown": -0.130792,
+       "sharpe": 0.159161,
+       "avg_exposure": 0.757833
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_score",
+      "max_positions": 20,
+      "trades": 1342,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": -0.010313,
+       "cagr": -0.005245,
+       "max_drawdown": -0.154518,
+       "sharpe": 0.00546,
+       "avg_exposure": 0.751917
+      },
+      "oos": {
+       "total_return": -0.005793,
+       "cagr": -0.002911,
+       "max_drawdown": -0.10215,
+       "sharpe": 0.02986,
+       "avg_exposure": 0.757617
+      },
+      "full": {
+       "total_return": -0.00831,
+       "cagr": -0.002101,
+       "max_drawdown": -0.154518,
+       "sharpe": 0.035968,
+       "avg_exposure": 0.754781
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 5,
+      "trades": 351,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": -0.002866,
+       "cagr": -0.001455,
+       "max_drawdown": -0.172719,
+       "sharpe": 0.041332,
+       "avg_exposure": 0.742639
+      },
+      "oos": {
+       "total_return": -0.262105,
+       "cagr": -0.14144,
+       "max_drawdown": -0.302625,
+       "sharpe": -1.130565,
+       "avg_exposure": 0.767651
+      },
+      "full": {
+       "total_return": -0.269433,
+       "cagr": -0.076083,
+       "max_drawdown": -0.302625,
+       "sharpe": -0.606492,
+       "avg_exposure": 0.755208
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 10,
+      "trades": 693,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.050732,
+       "cagr": 0.025422,
+       "max_drawdown": -0.108093,
+       "sharpe": 0.301052,
+       "avg_exposure": 0.747479
+      },
+      "oos": {
+       "total_return": -0.163064,
+       "cagr": -0.085438,
+       "max_drawdown": -0.210317,
+       "sharpe": -0.729691,
+       "avg_exposure": 0.761776
+      },
+      "full": {
+       "total_return": -0.122876,
+       "cagr": -0.032508,
+       "max_drawdown": -0.219869,
+       "sharpe": -0.254817,
+       "avg_exposure": 0.754663
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 15,
+      "trades": 1028,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.113883,
+       "cagr": 0.056237,
+       "max_drawdown": -0.106877,
+       "sharpe": 0.622083,
+       "avg_exposure": 0.746864
+      },
+      "oos": {
+       "total_return": -0.153002,
+       "cagr": -0.079937,
+       "max_drawdown": -0.193265,
+       "sharpe": -0.767351,
+       "avg_exposure": 0.762465
+      },
+      "full": {
+       "total_return": -0.055856,
+       "cagr": -0.014384,
+       "max_drawdown": -0.206613,
+       "sharpe": -0.097292,
+       "avg_exposure": 0.754704
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "low_vol",
+      "max_positions": 20,
+      "trades": 1361,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.092937,
+       "cagr": 0.046114,
+       "max_drawdown": -0.11336,
+       "sharpe": 0.524989,
+       "avg_exposure": 0.746318
+      },
+      "oos": {
+       "total_return": -0.138658,
+       "cagr": -0.072152,
+       "max_drawdown": -0.185686,
+       "sharpe": -0.719274,
+       "avg_exposure": 0.761622
+      },
+      "full": {
+       "total_return": -0.051633,
+       "cagr": -0.013274,
+       "max_drawdown": -0.185686,
+       "sharpe": -0.090869,
+       "avg_exposure": 0.754008
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "rs",
+      "max_positions": 5,
+      "trades": 357,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": -0.104783,
+       "cagr": -0.054604,
+       "max_drawdown": -0.223341,
+       "sharpe": -0.261845,
+       "avg_exposure": 0.762618
+      },
+      "oos": {
+       "total_return": -0.079622,
+       "cagr": -0.040774,
+       "max_drawdown": -0.256863,
+       "sharpe": -0.042033,
+       "avg_exposure": 0.732865
+      },
+      "full": {
+       "total_return": -0.172698,
+       "cagr": -0.046665,
+       "max_drawdown": -0.256863,
+       "sharpe": -0.121021,
+       "avg_exposure": 0.747667
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "rs",
+      "max_positions": 10,
+      "trades": 696,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": -0.082768,
+       "cagr": -0.042881,
+       "max_drawdown": -0.178417,
+       "sharpe": -0.248499,
+       "avg_exposure": 0.754323
+      },
+      "oos": {
+       "total_return": 0.134313,
+       "cagr": 0.065272,
+       "max_drawdown": -0.166593,
+       "sharpe": 0.420667,
+       "avg_exposure": 0.746816
+      },
+      "full": {
+       "total_return": 0.038847,
+       "cagr": 0.009653,
+       "max_drawdown": -0.178417,
+       "sharpe": 0.142076,
+       "avg_exposure": 0.750551
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "rs",
+      "max_positions": 15,
+      "trades": 1039,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": -0.008972,
+       "cagr": -0.004562,
+       "max_drawdown": -0.147383,
+       "sharpe": 0.028192,
+       "avg_exposure": 0.750172
+      },
+      "oos": {
+       "total_return": 0.108792,
+       "cagr": 0.053179,
+       "max_drawdown": -0.158193,
+       "sharpe": 0.392771,
+       "avg_exposure": 0.748278
+      },
+      "full": {
+       "total_return": 0.095347,
+       "cagr": 0.023222,
+       "max_drawdown": -0.158193,
+       "sharpe": 0.228875,
+       "avg_exposure": 0.74922
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "rs",
+      "max_positions": 20,
+      "trades": 1379,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.019146,
+       "cagr": 0.009667,
+       "max_drawdown": -0.154725,
+       "sharpe": 0.140065,
+       "avg_exposure": 0.749251
+      },
+      "oos": {
+       "total_return": 0.007237,
+       "cagr": 0.003624,
+       "max_drawdown": -0.15127,
+       "sharpe": 0.10131,
+       "avg_exposure": 0.748546
+      },
+      "full": {
+       "total_return": 0.02721,
+       "cagr": 0.00679,
+       "max_drawdown": -0.154725,
+       "sharpe": 0.118676,
+       "avg_exposure": 0.748897
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 5,
+      "trades": 341,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.13008,
+       "cagr": 0.064001,
+       "max_drawdown": -0.109887,
+       "sharpe": 0.515532,
+       "avg_exposure": 0.764151
+      },
+      "oos": {
+       "total_return": 0.04866,
+       "cagr": 0.024125,
+       "max_drawdown": -0.234798,
+       "sharpe": 0.222726,
+       "avg_exposure": 0.762069
+      },
+      "full": {
+       "total_return": 0.184487,
+       "cagr": 0.043602,
+       "max_drawdown": -0.234798,
+       "sharpe": 0.345379,
+       "avg_exposure": 0.763104
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 10,
+      "trades": 679,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.092434,
+       "cagr": 0.04587,
+       "max_drawdown": -0.127565,
+       "sharpe": 0.428754,
+       "avg_exposure": 0.757405
+      },
+      "oos": {
+       "total_return": 0.008416,
+       "cagr": 0.004214,
+       "max_drawdown": -0.15447,
+       "sharpe": 0.101316,
+       "avg_exposure": 0.758856
+      },
+      "full": {
+       "total_return": 0.117053,
+       "cagr": 0.028295,
+       "max_drawdown": -0.15447,
+       "sharpe": 0.276428,
+       "avg_exposure": 0.758134
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 15,
+      "trades": 1019,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.051965,
+       "cagr": 0.026032,
+       "max_drawdown": -0.148929,
+       "sharpe": 0.279549,
+       "avg_exposure": 0.749563
+      },
+      "oos": {
+       "total_return": 0.005838,
+       "cagr": 0.002925,
+       "max_drawdown": -0.137922,
+       "sharpe": 0.086126,
+       "avg_exposure": 0.756275
+      },
+      "full": {
+       "total_return": 0.066211,
+       "cagr": 0.016292,
+       "max_drawdown": -0.148929,
+       "sharpe": 0.194633,
+       "avg_exposure": 0.752936
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 60,
+       "market_filter": "sma50",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 2.5,
+       "max_sl_pct": 0.1,
+       "rr": [
+        2.0,
+        3.0
+       ],
+       "trail_ma": 0,
+       "hold_max_days": 15
+      },
+      "rank": "random",
+      "max_positions": 20,
+      "trades": 1351,
+      "candidates_is": 6203,
+      "is": {
+       "total_return": 0.070755,
+       "cagr": 0.035289,
+       "max_drawdown": -0.131777,
+       "sharpe": 0.366636,
+       "avg_exposure": 0.749093
+      },
+      "oos": {
+       "total_return": -0.00586,
+       "cagr": -0.002944,
+       "max_drawdown": -0.118747,
+       "sharpe": 0.032486,
+       "avg_exposure": 0.753379
+      },
+      "full": {
+       "total_return": 0.071039,
+       "cagr": 0.01745,
+       "max_drawdown": -0.131777,
+       "sharpe": 0.209402,
+       "avg_exposure": 0.751247
+      }
+     }
+    ]
+   },
+   "medium": {
+    "current": {
+     "set": "config sekarang",
+     "params": {},
+     "rank": "score",
+     "max_positions": 8,
+     "trades": 251,
+     "candidates_is": 2877,
+     "is": {
+      "total_return": 0.159323,
+      "cagr": 0.07788,
+      "max_drawdown": -0.158864,
+      "sharpe": 0.628748,
+      "avg_exposure": 0.788186
+     },
+     "oos": {
+      "total_return": -0.148339,
+      "cagr": -0.077399,
+      "max_drawdown": -0.241436,
+      "sharpe": -0.512887,
+      "avg_exposure": 0.79458
+     },
+     "full": {
+      "total_return": -0.023112,
+      "cagr": -0.005877,
+      "max_drawdown": -0.241436,
+      "sharpe": 0.025117,
+      "avg_exposure": 0.791399
+     }
+    },
+    "best_is": {
+     "set": "config sekarang",
+     "params": {},
+     "rank": "low_vol",
+     "max_positions": 8,
+     "trades": 260,
+     "candidates_is": 2877,
+     "is": {
+      "total_return": 0.254862,
+      "cagr": 0.122062,
+      "max_drawdown": -0.095624,
+      "sharpe": 1.198032,
+      "avg_exposure": 0.809224
+     },
+     "oos": {
+      "total_return": -0.096498,
+      "cagr": -0.049638,
+      "max_drawdown": -0.1689,
+      "sharpe": -0.371456,
+      "avg_exposure": 0.786248
+     },
+     "full": {
+      "total_return": 0.134206,
+      "cagr": 0.032253,
+      "max_drawdown": -0.1689,
+      "sharpe": 0.344493,
+      "avg_exposure": 0.797678
+     }
+    },
+    "verdict": {
+     "oos_positive": false,
+     "oos_sharpe_beats_bench": false,
+     "oos_return_beats_bench": false
+    },
+    "top_is": [
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 8,
+      "trades": 260,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.254862,
+       "cagr": 0.122062,
+       "max_drawdown": -0.095624,
+       "sharpe": 1.198032,
+       "avg_exposure": 0.809224
+      },
+      "oos": {
+       "total_return": -0.096498,
+       "cagr": -0.049638,
+       "max_drawdown": -0.1689,
+       "sharpe": -0.371456,
+       "avg_exposure": 0.786248
+      },
+      "full": {
+       "total_return": 0.134206,
+       "cagr": 0.032253,
+       "max_drawdown": -0.1689,
+       "sharpe": 0.344493,
+       "avg_exposure": 0.797678
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 12,
+      "trades": 383,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.192713,
+       "cagr": 0.093518,
+       "max_drawdown": -0.077653,
+       "sharpe": 0.997894,
+       "avg_exposure": 0.814183
+      },
+      "oos": {
+       "total_return": -0.101159,
+       "cagr": -0.052101,
+       "max_drawdown": -0.173533,
+       "sharpe": -0.456874,
+       "avg_exposure": 0.792869
+      },
+      "full": {
+       "total_return": 0.06961,
+       "cagr": 0.017108,
+       "max_drawdown": -0.173533,
+       "sharpe": 0.22026,
+       "avg_exposure": 0.803473
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 12,
+      "trades": 301,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.234188,
+       "cagr": 0.112646,
+       "max_drawdown": -0.089987,
+       "sharpe": 0.953438,
+       "avg_exposure": 0.90767
+      },
+      "oos": {
+       "total_return": -0.215393,
+       "cagr": -0.114588,
+       "max_drawdown": -0.280444,
+       "sharpe": -0.857526,
+       "avg_exposure": 0.907351
+      },
+      "full": {
+       "total_return": -0.03544,
+       "cagr": -0.009054,
+       "max_drawdown": -0.280444,
+       "sharpe": -0.008838,
+       "avg_exposure": 0.90751
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 242,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.236649,
+       "cagr": 0.113771,
+       "max_drawdown": -0.110264,
+       "sharpe": 0.935618,
+       "avg_exposure": 0.805791
+      },
+      "oos": {
+       "total_return": -0.1185,
+       "cagr": -0.061321,
+       "max_drawdown": -0.167694,
+       "sharpe": -0.404919,
+       "avg_exposure": 0.833905
+      },
+      "full": {
+       "total_return": 0.083162,
+       "cagr": 0.020341,
+       "max_drawdown": -0.183497,
+       "sharpe": 0.221124,
+       "avg_exposure": 0.819919
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 199,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.239653,
+       "cagr": 0.115143,
+       "max_drawdown": -0.153568,
+       "sharpe": 0.923932,
+       "avg_exposure": 0.901743
+      },
+      "oos": {
+       "total_return": -0.157813,
+       "cagr": -0.082563,
+       "max_drawdown": -0.24774,
+       "sharpe": -0.519611,
+       "avg_exposure": 0.902249
+      },
+      "full": {
+       "total_return": 0.040402,
+       "cagr": 0.010034,
+       "max_drawdown": -0.24774,
+       "sharpe": 0.141929,
+       "avg_exposure": 0.901997
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 12,
+      "trades": 292,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.23768,
+       "cagr": 0.114242,
+       "max_drawdown": -0.128005,
+       "sharpe": 0.848494,
+       "avg_exposure": 0.94645
+      },
+      "oos": {
+       "total_return": -0.226507,
+       "cagr": -0.120903,
+       "max_drawdown": -0.272078,
+       "sharpe": -0.775827,
+       "avg_exposure": 0.939908
+      },
+      "full": {
+       "total_return": -0.033834,
+       "cagr": -0.008639,
+       "max_drawdown": -0.272078,
+       "sharpe": 0.013514,
+       "avg_exposure": 0.943163
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 24,
+      "trades": 786,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.151941,
+       "cagr": 0.074393,
+       "max_drawdown": -0.077979,
+       "sharpe": 0.821022,
+       "avg_exposure": 0.810532
+      },
+      "oos": {
+       "total_return": -0.109155,
+       "cagr": -0.056341,
+       "max_drawdown": -0.196228,
+       "sharpe": -0.5332,
+       "avg_exposure": 0.787571
+      },
+      "full": {
+       "total_return": 0.021149,
+       "cagr": 0.005289,
+       "max_drawdown": -0.196228,
+       "sharpe": 0.103221,
+       "avg_exposure": 0.798994
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 594,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.190617,
+       "cagr": 0.092543,
+       "max_drawdown": -0.084742,
+       "sharpe": 0.813483,
+       "avg_exposure": 0.913545
+      },
+      "oos": {
+       "total_return": -0.246486,
+       "cagr": -0.13237,
+       "max_drawdown": -0.28532,
+       "sharpe": -1.051402,
+       "avg_exposure": 0.896234
+      },
+      "full": {
+       "total_return": -0.101378,
+       "cagr": -0.026585,
+       "max_drawdown": -0.28532,
+       "sharpe": -0.158149,
+       "avg_exposure": 0.904846
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 16,
+      "trades": 508,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.14946,
+       "cagr": 0.073218,
+       "max_drawdown": -0.080586,
+       "sharpe": 0.800529,
+       "avg_exposure": 0.813634
+      },
+      "oos": {
+       "total_return": -0.099312,
+       "cagr": -0.051125,
+       "max_drawdown": -0.189141,
+       "sharpe": -0.468108,
+       "avg_exposure": 0.794872
+      },
+      "full": {
+       "total_return": 0.031245,
+       "cagr": 0.007786,
+       "max_drawdown": -0.189141,
+       "sharpe": 0.128576,
+       "avg_exposure": 0.804206
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 16,
+      "trades": 396,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.18378,
+       "cagr": 0.089356,
+       "max_drawdown": -0.089707,
+       "sharpe": 0.781961,
+       "avg_exposure": 0.911354
+      },
+      "oos": {
+       "total_return": -0.208143,
+       "cagr": -0.110493,
+       "max_drawdown": -0.267539,
+       "sharpe": -0.837314,
+       "avg_exposure": 0.902132
+      },
+      "full": {
+       "total_return": -0.066998,
+       "cagr": -0.017329,
+       "max_drawdown": -0.267539,
+       "sharpe": -0.077948,
+       "avg_exposure": 0.90672
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 24,
+      "trades": 735,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.169983,
+       "cagr": 0.082897,
+       "max_drawdown": -0.088647,
+       "sharpe": 0.758339,
+       "avg_exposure": 0.819541
+      },
+      "oos": {
+       "total_return": 0.05616,
+       "cagr": 0.027793,
+       "max_drawdown": -0.139697,
+       "sharpe": 0.306243,
+       "avg_exposure": 0.814408
+      },
+      "full": {
+       "total_return": 0.227919,
+       "cagr": 0.053118,
+       "max_drawdown": -0.139697,
+       "sharpe": 0.520982,
+       "avg_exposure": 0.816962
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 769,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.162573,
+       "cagr": 0.079412,
+       "max_drawdown": -0.089507,
+       "sharpe": 0.753755,
+       "avg_exposure": 0.816865
+      },
+      "oos": {
+       "total_return": -0.053433,
+       "cagr": -0.027175,
+       "max_drawdown": -0.147724,
+       "sharpe": -0.1903,
+       "avg_exposure": 0.813239
+      },
+      "full": {
+       "total_return": 0.098725,
+       "cagr": 0.024016,
+       "max_drawdown": -0.147724,
+       "sharpe": 0.270245,
+       "avg_exposure": 0.815043
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 8,
+      "trades": 190,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.220034,
+       "cagr": 0.106154,
+       "max_drawdown": -0.123058,
+       "sharpe": 0.75126,
+       "avg_exposure": 0.949338
+      },
+      "oos": {
+       "total_return": -0.146338,
+       "cagr": -0.076313,
+       "max_drawdown": -0.270008,
+       "sharpe": -0.38054,
+       "avg_exposure": 0.941388
+      },
+      "full": {
+       "total_return": 0.048353,
+       "cagr": 0.011974,
+       "max_drawdown": -0.270008,
+       "sharpe": 0.154984,
+       "avg_exposure": 0.945343
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 202,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.214641,
+       "cagr": 0.103671,
+       "max_drawdown": -0.144727,
+       "sharpe": 0.751052,
+       "avg_exposure": 0.943275
+      },
+      "oos": {
+       "total_return": -0.329652,
+       "cagr": -0.181814,
+       "max_drawdown": -0.370782,
+       "sharpe": -1.181592,
+       "avg_exposure": 0.942921
+      },
+      "full": {
+       "total_return": -0.188882,
+       "cagr": -0.051401,
+       "max_drawdown": -0.374161,
+       "sharpe": -0.268707,
+       "avg_exposure": 0.943097
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 8,
+      "trades": 266,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.178711,
+       "cagr": 0.086987,
+       "max_drawdown": -0.093569,
+       "sharpe": 0.732506,
+       "avg_exposure": 0.799909
+      },
+      "oos": {
+       "total_return": -0.14194,
+       "cagr": -0.073928,
+       "max_drawdown": -0.178588,
+       "sharpe": -0.507375,
+       "avg_exposure": 0.805623
+      },
+      "full": {
+       "total_return": 0.014057,
+       "cagr": 0.003525,
+       "max_drawdown": -0.178588,
+       "sharpe": 0.092068,
+       "avg_exposure": 0.80278
+      }
+     }
+    ],
+    "all": [
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 8,
+      "trades": 251,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.159323,
+       "cagr": 0.07788,
+       "max_drawdown": -0.158864,
+       "sharpe": 0.628748,
+       "avg_exposure": 0.788186
+      },
+      "oos": {
+       "total_return": -0.148339,
+       "cagr": -0.077399,
+       "max_drawdown": -0.241436,
+       "sharpe": -0.512887,
+       "avg_exposure": 0.79458
+      },
+      "full": {
+       "total_return": -0.023112,
+       "cagr": -0.005877,
+       "max_drawdown": -0.241436,
+       "sharpe": 0.025117,
+       "avg_exposure": 0.791399
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 12,
+      "trades": 371,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.175441,
+       "cagr": 0.085456,
+       "max_drawdown": -0.134719,
+       "sharpe": 0.714935,
+       "avg_exposure": 0.793577
+      },
+      "oos": {
+       "total_return": -0.156195,
+       "cagr": -0.081679,
+       "max_drawdown": -0.209407,
+       "sharpe": -0.632411,
+       "avg_exposure": 0.797911
+      },
+      "full": {
+       "total_return": -0.016947,
+       "cagr": -0.004299,
+       "max_drawdown": -0.209407,
+       "sharpe": 0.027895,
+       "avg_exposure": 0.795755
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 16,
+      "trades": 497,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.14371,
+       "cagr": 0.070491,
+       "max_drawdown": -0.124894,
+       "sharpe": 0.630111,
+       "avg_exposure": 0.794661
+      },
+      "oos": {
+       "total_return": -0.132655,
+       "cagr": -0.068914,
+       "max_drawdown": -0.213503,
+       "sharpe": -0.543892,
+       "avg_exposure": 0.804056
+      },
+      "full": {
+       "total_return": -0.013126,
+       "cagr": -0.003325,
+       "max_drawdown": -0.213503,
+       "sharpe": 0.031774,
+       "avg_exposure": 0.799382
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "score",
+      "max_positions": 24,
+      "trades": 751,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.143705,
+       "cagr": 0.070489,
+       "max_drawdown": -0.110117,
+       "sharpe": 0.665486,
+       "avg_exposure": 0.805923
+      },
+      "oos": {
+       "total_return": -0.177933,
+       "cagr": -0.093626,
+       "max_drawdown": -0.215418,
+       "sharpe": -0.794792,
+       "avg_exposure": 0.797288
+      },
+      "full": {
+       "total_return": -0.064773,
+       "cagr": -0.016739,
+       "max_drawdown": -0.215418,
+       "sharpe": -0.091453,
+       "avg_exposure": 0.801584
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 8,
+      "trades": 266,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.178711,
+       "cagr": 0.086987,
+       "max_drawdown": -0.093569,
+       "sharpe": 0.732506,
+       "avg_exposure": 0.799909
+      },
+      "oos": {
+       "total_return": -0.14194,
+       "cagr": -0.073928,
+       "max_drawdown": -0.178588,
+       "sharpe": -0.507375,
+       "avg_exposure": 0.805623
+      },
+      "full": {
+       "total_return": 0.014057,
+       "cagr": 0.003525,
+       "max_drawdown": -0.178588,
+       "sharpe": 0.092068,
+       "avg_exposure": 0.80278
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 12,
+      "trades": 391,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.131188,
+       "cagr": 0.06453,
+       "max_drawdown": -0.111956,
+       "sharpe": 0.591953,
+       "avg_exposure": 0.814916
+      },
+      "oos": {
+       "total_return": -0.072617,
+       "cagr": -0.037118,
+       "max_drawdown": -0.144462,
+       "sharpe": -0.241114,
+       "avg_exposure": 0.808021
+      },
+      "full": {
+       "total_return": 0.048182,
+       "cagr": 0.011932,
+       "max_drawdown": -0.144462,
+       "sharpe": 0.158806,
+       "avg_exposure": 0.811451
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 16,
+      "trades": 518,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.159032,
+       "cagr": 0.077743,
+       "max_drawdown": -0.100768,
+       "sharpe": 0.718658,
+       "avg_exposure": 0.822058
+      },
+      "oos": {
+       "total_return": -0.055356,
+       "cagr": -0.028167,
+       "max_drawdown": -0.160431,
+       "sharpe": -0.183901,
+       "avg_exposure": 0.809107
+      },
+      "full": {
+       "total_return": 0.092202,
+       "cagr": 0.022481,
+       "max_drawdown": -0.160431,
+       "sharpe": 0.250708,
+       "avg_exposure": 0.81555
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 769,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.162573,
+       "cagr": 0.079412,
+       "max_drawdown": -0.089507,
+       "sharpe": 0.753755,
+       "avg_exposure": 0.816865
+      },
+      "oos": {
+       "total_return": -0.053433,
+       "cagr": -0.027175,
+       "max_drawdown": -0.147724,
+       "sharpe": -0.1903,
+       "avg_exposure": 0.813239
+      },
+      "full": {
+       "total_return": 0.098725,
+       "cagr": 0.024016,
+       "max_drawdown": -0.147724,
+       "sharpe": 0.270245,
+       "avg_exposure": 0.815043
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 8,
+      "trades": 260,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.254862,
+       "cagr": 0.122062,
+       "max_drawdown": -0.095624,
+       "sharpe": 1.198032,
+       "avg_exposure": 0.809224
+      },
+      "oos": {
+       "total_return": -0.096498,
+       "cagr": -0.049638,
+       "max_drawdown": -0.1689,
+       "sharpe": -0.371456,
+       "avg_exposure": 0.786248
+      },
+      "full": {
+       "total_return": 0.134206,
+       "cagr": 0.032253,
+       "max_drawdown": -0.1689,
+       "sharpe": 0.344493,
+       "avg_exposure": 0.797678
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 12,
+      "trades": 383,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.192713,
+       "cagr": 0.093518,
+       "max_drawdown": -0.077653,
+       "sharpe": 0.997894,
+       "avg_exposure": 0.814183
+      },
+      "oos": {
+       "total_return": -0.101159,
+       "cagr": -0.052101,
+       "max_drawdown": -0.173533,
+       "sharpe": -0.456874,
+       "avg_exposure": 0.792869
+      },
+      "full": {
+       "total_return": 0.06961,
+       "cagr": 0.017108,
+       "max_drawdown": -0.173533,
+       "sharpe": 0.22026,
+       "avg_exposure": 0.803473
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 16,
+      "trades": 508,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.14946,
+       "cagr": 0.073218,
+       "max_drawdown": -0.080586,
+       "sharpe": 0.800529,
+       "avg_exposure": 0.813634
+      },
+      "oos": {
+       "total_return": -0.099312,
+       "cagr": -0.051125,
+       "max_drawdown": -0.189141,
+       "sharpe": -0.468108,
+       "avg_exposure": 0.794872
+      },
+      "full": {
+       "total_return": 0.031245,
+       "cagr": 0.007786,
+       "max_drawdown": -0.189141,
+       "sharpe": 0.128576,
+       "avg_exposure": 0.804206
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "low_vol",
+      "max_positions": 24,
+      "trades": 786,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.151941,
+       "cagr": 0.074393,
+       "max_drawdown": -0.077979,
+       "sharpe": 0.821022,
+       "avg_exposure": 0.810532
+      },
+      "oos": {
+       "total_return": -0.109155,
+       "cagr": -0.056341,
+       "max_drawdown": -0.196228,
+       "sharpe": -0.5332,
+       "avg_exposure": 0.787571
+      },
+      "full": {
+       "total_return": 0.021149,
+       "cagr": 0.005289,
+       "max_drawdown": -0.196228,
+       "sharpe": 0.103221,
+       "avg_exposure": 0.798994
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 8,
+      "trades": 265,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.102026,
+       "cagr": 0.050518,
+       "max_drawdown": -0.151912,
+       "sharpe": 0.427049,
+       "avg_exposure": 0.814866
+      },
+      "oos": {
+       "total_return": 0.14185,
+       "cagr": 0.068817,
+       "max_drawdown": -0.155067,
+       "sharpe": 0.483094,
+       "avg_exposure": 0.810617
+      },
+      "full": {
+       "total_return": 0.248517,
+       "cagr": 0.057543,
+       "max_drawdown": -0.155067,
+       "sharpe": 0.442766,
+       "avg_exposure": 0.812731
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 12,
+      "trades": 382,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.134575,
+       "cagr": 0.066145,
+       "max_drawdown": -0.138144,
+       "sharpe": 0.574402,
+       "avg_exposure": 0.813163
+      },
+      "oos": {
+       "total_return": 0.051856,
+       "cagr": 0.025689,
+       "max_drawdown": -0.158706,
+       "sharpe": 0.246991,
+       "avg_exposure": 0.799231
+      },
+      "full": {
+       "total_return": 0.185836,
+       "cagr": 0.043901,
+       "max_drawdown": -0.158706,
+       "sharpe": 0.384087,
+       "avg_exposure": 0.806162
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 16,
+      "trades": 509,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.120831,
+       "cagr": 0.059574,
+       "max_drawdown": -0.132385,
+       "sharpe": 0.538684,
+       "avg_exposure": 0.807271
+      },
+      "oos": {
+       "total_return": 0.049725,
+       "cagr": 0.024646,
+       "max_drawdown": -0.171375,
+       "sharpe": 0.245976,
+       "avg_exposure": 0.789102
+      },
+      "full": {
+       "total_return": 0.169151,
+       "cagr": 0.040179,
+       "max_drawdown": -0.171375,
+       "sharpe": 0.368905,
+       "avg_exposure": 0.798141
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "rs",
+      "max_positions": 24,
+      "trades": 762,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.12859,
+       "cagr": 0.063288,
+       "max_drawdown": -0.098736,
+       "sharpe": 0.589586,
+       "avg_exposure": 0.805606
+      },
+      "oos": {
+       "total_return": 0.036516,
+       "cagr": 0.018157,
+       "max_drawdown": -0.14326,
+       "sharpe": 0.206628,
+       "avg_exposure": 0.788357
+      },
+      "full": {
+       "total_return": 0.160115,
+       "cagr": 0.038147,
+       "max_drawdown": -0.14326,
+       "sharpe": 0.371382,
+       "avg_exposure": 0.796938
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 242,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.236649,
+       "cagr": 0.113771,
+       "max_drawdown": -0.110264,
+       "sharpe": 0.935618,
+       "avg_exposure": 0.805791
+      },
+      "oos": {
+       "total_return": -0.1185,
+       "cagr": -0.061321,
+       "max_drawdown": -0.167694,
+       "sharpe": -0.404919,
+       "avg_exposure": 0.833905
+      },
+      "full": {
+       "total_return": 0.083162,
+       "cagr": 0.020341,
+       "max_drawdown": -0.183497,
+       "sharpe": 0.221124,
+       "avg_exposure": 0.819919
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 12,
+      "trades": 368,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.149652,
+       "cagr": 0.073309,
+       "max_drawdown": -0.099825,
+       "sharpe": 0.664298,
+       "avg_exposure": 0.812308
+      },
+      "oos": {
+       "total_return": -0.078419,
+       "cagr": -0.040145,
+       "max_drawdown": -0.173425,
+       "sharpe": -0.291174,
+       "avg_exposure": 0.822652
+      },
+      "full": {
+       "total_return": 0.050203,
+       "cagr": 0.012424,
+       "max_drawdown": -0.173425,
+       "sharpe": 0.16439,
+       "avg_exposure": 0.817506
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 16,
+      "trades": 491,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.159129,
+       "cagr": 0.077788,
+       "max_drawdown": -0.09492,
+       "sharpe": 0.702106,
+       "avg_exposure": 0.812938
+      },
+      "oos": {
+       "total_return": -0.086949,
+       "cagr": -0.044612,
+       "max_drawdown": -0.160472,
+       "sharpe": -0.356586,
+       "avg_exposure": 0.819145
+      },
+      "full": {
+       "total_return": 0.05075,
+       "cagr": 0.012557,
+       "max_drawdown": -0.160472,
+       "sharpe": 0.166975,
+       "avg_exposure": 0.816057
+      }
+     },
+     {
+      "set": "config sekarang",
+      "params": {},
+      "rank": "random",
+      "max_positions": 24,
+      "trades": 735,
+      "candidates_is": 2877,
+      "is": {
+       "total_return": 0.169983,
+       "cagr": 0.082897,
+       "max_drawdown": -0.088647,
+       "sharpe": 0.758339,
+       "avg_exposure": 0.819541
+      },
+      "oos": {
+       "total_return": 0.05616,
+       "cagr": 0.027793,
+       "max_drawdown": -0.139697,
+       "sharpe": 0.306243,
+       "avg_exposure": 0.814408
+      },
+      "full": {
+       "total_return": 0.227919,
+       "cagr": 0.053118,
+       "max_drawdown": -0.139697,
+       "sharpe": 0.520982,
+       "avg_exposure": 0.816962
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 8,
+      "trades": 192,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.134707,
+       "cagr": 0.066208,
+       "max_drawdown": -0.121752,
+       "sharpe": 0.515186,
+       "avg_exposure": 0.902022
+      },
+      "oos": {
+       "total_return": -0.315034,
+       "cagr": -0.172911,
+       "max_drawdown": -0.367622,
+       "sharpe": -1.028465,
+       "avg_exposure": 0.888308
+      },
+      "full": {
+       "total_return": -0.221212,
+       "cagr": -0.061077,
+       "max_drawdown": -0.367622,
+       "sharpe": -0.318392,
+       "avg_exposure": 0.89513
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 12,
+      "trades": 285,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.180974,
+       "cagr": 0.088045,
+       "max_drawdown": -0.102297,
+       "sharpe": 0.71526,
+       "avg_exposure": 0.908994
+      },
+      "oos": {
+       "total_return": -0.242472,
+       "cagr": -0.130054,
+       "max_drawdown": -0.317875,
+       "sharpe": -0.898179,
+       "avg_exposure": 0.883692
+      },
+      "full": {
+       "total_return": -0.101657,
+       "cagr": -0.026661,
+       "max_drawdown": -0.317875,
+       "sharpe": -0.128297,
+       "avg_exposure": 0.896279
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 16,
+      "trades": 379,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.096063,
+       "cagr": 0.047631,
+       "max_drawdown": -0.102503,
+       "sharpe": 0.443875,
+       "avg_exposure": 0.912249
+      },
+      "oos": {
+       "total_return": -0.171314,
+       "cagr": -0.089972,
+       "max_drawdown": -0.236499,
+       "sharpe": -0.649656,
+       "avg_exposure": 0.887931
+      },
+      "full": {
+       "total_return": -0.087618,
+       "cagr": -0.022849,
+       "max_drawdown": -0.236499,
+       "sharpe": -0.118557,
+       "avg_exposure": 0.900029
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 24,
+      "trades": 565,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.118856,
+       "cagr": 0.058626,
+       "max_drawdown": -0.117794,
+       "sharpe": 0.546143,
+       "avg_exposure": 0.915103
+      },
+      "oos": {
+       "total_return": -0.200334,
+       "cagr": -0.106103,
+       "max_drawdown": -0.255679,
+       "sharpe": -0.827978,
+       "avg_exposure": 0.881875
+      },
+      "full": {
+       "total_return": -0.102803,
+       "cagr": -0.026974,
+       "max_drawdown": -0.255679,
+       "sharpe": -0.163861,
+       "avg_exposure": 0.898406
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 8,
+      "trades": 200,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.187503,
+       "cagr": 0.091093,
+       "max_drawdown": -0.128119,
+       "sharpe": 0.698347,
+       "avg_exposure": 0.918948
+      },
+      "oos": {
+       "total_return": -0.22409,
+       "cagr": -0.119526,
+       "max_drawdown": -0.281971,
+       "sharpe": -0.836998,
+       "avg_exposure": 0.893451
+      },
+      "full": {
+       "total_return": -0.0806,
+       "cagr": -0.02096,
+       "max_drawdown": -0.309378,
+       "sharpe": -0.081486,
+       "avg_exposure": 0.906135
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 12,
+      "trades": 298,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.11921,
+       "cagr": 0.058796,
+       "max_drawdown": -0.125427,
+       "sharpe": 0.520728,
+       "avg_exposure": 0.917625
+      },
+      "oos": {
+       "total_return": -0.224338,
+       "cagr": -0.119667,
+       "max_drawdown": -0.268906,
+       "sharpe": -0.935403,
+       "avg_exposure": 0.897293
+      },
+      "full": {
+       "total_return": -0.134862,
+       "cagr": -0.035858,
+       "max_drawdown": -0.289833,
+       "sharpe": -0.225825,
+       "avg_exposure": 0.907408
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 16,
+      "trades": 395,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.101644,
+       "cagr": 0.050334,
+       "max_drawdown": -0.11925,
+       "sharpe": 0.476517,
+       "avg_exposure": 0.917117
+      },
+      "oos": {
+       "total_return": -0.197519,
+       "cagr": -0.104525,
+       "max_drawdown": -0.251174,
+       "sharpe": -0.870031,
+       "avg_exposure": 0.895634
+      },
+      "full": {
+       "total_return": -0.119115,
+       "cagr": -0.031464,
+       "max_drawdown": -0.251174,
+       "sharpe": -0.210855,
+       "avg_exposure": 0.906321
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 597,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.126223,
+       "cagr": 0.062157,
+       "max_drawdown": -0.094388,
+       "sharpe": 0.579088,
+       "avg_exposure": 0.912975
+      },
+      "oos": {
+       "total_return": -0.262516,
+       "cagr": -0.14168,
+       "max_drawdown": -0.303674,
+       "sharpe": -1.235305,
+       "avg_exposure": 0.885324
+      },
+      "full": {
+       "total_return": -0.171653,
+       "cagr": -0.046362,
+       "max_drawdown": -0.303674,
+       "sharpe": -0.346765,
+       "avg_exposure": 0.89908
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 8,
+      "trades": 204,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.148759,
+       "cagr": 0.072886,
+       "max_drawdown": -0.113155,
+       "sharpe": 0.706779,
+       "avg_exposure": 0.902501
+      },
+      "oos": {
+       "total_return": -0.294589,
+       "cagr": -0.160615,
+       "max_drawdown": -0.3559,
+       "sharpe": -1.206804,
+       "avg_exposure": 0.898582
+      },
+      "full": {
+       "total_return": -0.196781,
+       "cagr": -0.053738,
+       "max_drawdown": -0.3559,
+       "sharpe": -0.384262,
+       "avg_exposure": 0.900531
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 12,
+      "trades": 296,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.087544,
+       "cagr": 0.043492,
+       "max_drawdown": -0.135354,
+       "sharpe": 0.463614,
+       "avg_exposure": 0.902544
+      },
+      "oos": {
+       "total_return": -0.273749,
+       "cagr": -0.148265,
+       "max_drawdown": -0.331683,
+       "sharpe": -1.260044,
+       "avg_exposure": 0.899721
+      },
+      "full": {
+       "total_return": -0.216959,
+       "cagr": -0.059787,
+       "max_drawdown": -0.331683,
+       "sharpe": -0.488513,
+       "avg_exposure": 0.901125
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 16,
+      "trades": 392,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.105721,
+       "cagr": 0.052304,
+       "max_drawdown": -0.134686,
+       "sharpe": 0.55088,
+       "avg_exposure": 0.908292
+      },
+      "oos": {
+       "total_return": -0.283772,
+       "cagr": -0.154182,
+       "max_drawdown": -0.339721,
+       "sharpe": -1.396312,
+       "avg_exposure": 0.891942
+      },
+      "full": {
+       "total_return": -0.215575,
+       "cagr": -0.059368,
+       "max_drawdown": -0.339721,
+       "sharpe": -0.506238,
+       "avg_exposure": 0.900076
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 24,
+      "trades": 571,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.119545,
+       "cagr": 0.058957,
+       "max_drawdown": -0.141558,
+       "sharpe": 0.632405,
+       "avg_exposure": 0.905251
+      },
+      "oos": {
+       "total_return": -0.213296,
+       "cagr": -0.113402,
+       "max_drawdown": -0.270324,
+       "sharpe": -0.997064,
+       "avg_exposure": 0.889369
+      },
+      "full": {
+       "total_return": -0.124539,
+       "cagr": -0.032971,
+       "max_drawdown": -0.270324,
+       "sharpe": -0.260659,
+       "avg_exposure": 0.89727
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 8,
+      "trades": 203,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.140265,
+       "cagr": 0.068854,
+       "max_drawdown": -0.120189,
+       "sharpe": 0.511802,
+       "avg_exposure": 0.916315
+      },
+      "oos": {
+       "total_return": -0.210168,
+       "cagr": -0.111635,
+       "max_drawdown": -0.244682,
+       "sharpe": -0.594232,
+       "avg_exposure": 0.894422
+      },
+      "full": {
+       "total_return": -0.105288,
+       "cagr": -0.027654,
+       "max_drawdown": -0.267769,
+       "sharpe": -0.088772,
+       "avg_exposure": 0.905314
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 12,
+      "trades": 306,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.145036,
+       "cagr": 0.071121,
+       "max_drawdown": -0.104721,
+       "sharpe": 0.564006,
+       "avg_exposure": 0.918084
+      },
+      "oos": {
+       "total_return": -0.221714,
+       "cagr": -0.118174,
+       "max_drawdown": -0.274138,
+       "sharpe": -0.668113,
+       "avg_exposure": 0.891006
+      },
+      "full": {
+       "total_return": -0.111804,
+       "cagr": -0.029444,
+       "max_drawdown": -0.277364,
+       "sharpe": -0.116782,
+       "avg_exposure": 0.904477
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 16,
+      "trades": 397,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.113943,
+       "cagr": 0.056266,
+       "max_drawdown": -0.106165,
+       "sharpe": 0.486325,
+       "avg_exposure": 0.917782
+      },
+      "oos": {
+       "total_return": -0.177498,
+       "cagr": -0.093385,
+       "max_drawdown": -0.229034,
+       "sharpe": -0.529251,
+       "avg_exposure": 0.896361
+      },
+      "full": {
+       "total_return": -0.083616,
+       "cagr": -0.02177,
+       "max_drawdown": -0.229034,
+       "sharpe": -0.07687,
+       "avg_exposure": 0.907018
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 24,
+      "trades": 591,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.117709,
+       "cagr": 0.058076,
+       "max_drawdown": -0.092687,
+       "sharpe": 0.515803,
+       "avg_exposure": 0.916212
+      },
+      "oos": {
+       "total_return": -0.216337,
+       "cagr": -0.115123,
+       "max_drawdown": -0.26319,
+       "sharpe": -0.845887,
+       "avg_exposure": 0.891641
+      },
+      "full": {
+       "total_return": -0.123948,
+       "cagr": -0.032806,
+       "max_drawdown": -0.26319,
+       "sharpe": -0.192665,
+       "avg_exposure": 0.903865
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 199,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.239653,
+       "cagr": 0.115143,
+       "max_drawdown": -0.153568,
+       "sharpe": 0.923932,
+       "avg_exposure": 0.901743
+      },
+      "oos": {
+       "total_return": -0.157813,
+       "cagr": -0.082563,
+       "max_drawdown": -0.24774,
+       "sharpe": -0.519611,
+       "avg_exposure": 0.902249
+      },
+      "full": {
+       "total_return": 0.040402,
+       "cagr": 0.010034,
+       "max_drawdown": -0.24774,
+       "sharpe": 0.141929,
+       "avg_exposure": 0.901997
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 12,
+      "trades": 301,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.234188,
+       "cagr": 0.112646,
+       "max_drawdown": -0.089987,
+       "sharpe": 0.953438,
+       "avg_exposure": 0.90767
+      },
+      "oos": {
+       "total_return": -0.215393,
+       "cagr": -0.114588,
+       "max_drawdown": -0.280444,
+       "sharpe": -0.857526,
+       "avg_exposure": 0.907351
+      },
+      "full": {
+       "total_return": -0.03544,
+       "cagr": -0.009054,
+       "max_drawdown": -0.280444,
+       "sharpe": -0.008838,
+       "avg_exposure": 0.90751
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 16,
+      "trades": 396,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.18378,
+       "cagr": 0.089356,
+       "max_drawdown": -0.089707,
+       "sharpe": 0.781961,
+       "avg_exposure": 0.911354
+      },
+      "oos": {
+       "total_return": -0.208143,
+       "cagr": -0.110493,
+       "max_drawdown": -0.267539,
+       "sharpe": -0.837314,
+       "avg_exposure": 0.902132
+      },
+      "full": {
+       "total_return": -0.066998,
+       "cagr": -0.017329,
+       "max_drawdown": -0.267539,
+       "sharpe": -0.077948,
+       "avg_exposure": 0.90672
+      }
+     },
+     {
+      "set": "grid #1",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 24,
+      "trades": 582,
+      "candidates_is": 2146,
+      "is": {
+       "total_return": 0.09725,
+       "cagr": 0.048206,
+       "max_drawdown": -0.098785,
+       "sharpe": 0.469908,
+       "avg_exposure": 0.909179
+      },
+      "oos": {
+       "total_return": -0.131919,
+       "cagr": -0.068518,
+       "max_drawdown": -0.227356,
+       "sharpe": -0.523924,
+       "avg_exposure": 0.895816
+      },
+      "full": {
+       "total_return": -0.04507,
+       "cagr": -0.011557,
+       "max_drawdown": -0.227356,
+       "sharpe": -0.039397,
+       "avg_exposure": 0.902464
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 8,
+      "trades": 187,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": -0.004141,
+       "cagr": -0.002103,
+       "max_drawdown": -0.153883,
+       "sharpe": 0.052199,
+       "avg_exposure": 0.913637
+      },
+      "oos": {
+       "total_return": -0.229492,
+       "cagr": -0.122607,
+       "max_drawdown": -0.327654,
+       "sharpe": -0.737955,
+       "avg_exposure": 0.90451
+      },
+      "full": {
+       "total_return": -0.235642,
+       "cagr": -0.065493,
+       "max_drawdown": -0.327654,
+       "sharpe": -0.38327,
+       "avg_exposure": 0.909051
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 12,
+      "trades": 280,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.104221,
+       "cagr": 0.051579,
+       "max_drawdown": -0.123475,
+       "sharpe": 0.469968,
+       "avg_exposure": 0.917174
+      },
+      "oos": {
+       "total_return": -0.25184,
+       "cagr": -0.135468,
+       "max_drawdown": -0.303396,
+       "sharpe": -0.92652,
+       "avg_exposure": 0.891201
+      },
+      "full": {
+       "total_return": -0.173342,
+       "cagr": -0.046852,
+       "max_drawdown": -0.316272,
+       "sharpe": -0.287495,
+       "avg_exposure": 0.904122
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 16,
+      "trades": 374,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.139884,
+       "cagr": 0.068673,
+       "max_drawdown": -0.110931,
+       "sharpe": 0.6273,
+       "avg_exposure": 0.91221
+      },
+      "oos": {
+       "total_return": -0.21529,
+       "cagr": -0.11453,
+       "max_drawdown": -0.271326,
+       "sharpe": -0.828302,
+       "avg_exposure": 0.895723
+      },
+      "full": {
+       "total_return": -0.106225,
+       "cagr": -0.027911,
+       "max_drawdown": -0.271326,
+       "sharpe": -0.159635,
+       "avg_exposure": 0.903926
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 24,
+      "trades": 574,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.071847,
+       "cagr": 0.035824,
+       "max_drawdown": -0.114798,
+       "sharpe": 0.361113,
+       "avg_exposure": 0.912854
+      },
+      "oos": {
+       "total_return": -0.2271,
+       "cagr": -0.121241,
+       "max_drawdown": -0.278789,
+       "sharpe": -0.977195,
+       "avg_exposure": 0.881992
+      },
+      "full": {
+       "total_return": -0.17209,
+       "cagr": -0.046488,
+       "max_drawdown": -0.278789,
+       "sharpe": -0.334705,
+       "avg_exposure": 0.897346
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 8,
+      "trades": 200,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.071283,
+       "cagr": 0.035548,
+       "max_drawdown": -0.12851,
+       "sharpe": 0.33406,
+       "avg_exposure": 0.915849
+      },
+      "oos": {
+       "total_return": -0.292958,
+       "cagr": -0.159642,
+       "max_drawdown": -0.333045,
+       "sharpe": -1.114533,
+       "avg_exposure": 0.910037
+      },
+      "full": {
+       "total_return": -0.242422,
+       "cagr": -0.067589,
+       "max_drawdown": -0.365424,
+       "sharpe": -0.435455,
+       "avg_exposure": 0.912928
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 12,
+      "trades": 305,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.06565,
+       "cagr": 0.032782,
+       "max_drawdown": -0.153314,
+       "sharpe": 0.319371,
+       "avg_exposure": 0.913305
+      },
+      "oos": {
+       "total_return": -0.320604,
+       "cagr": -0.176292,
+       "max_drawdown": -0.350758,
+       "sharpe": -1.315245,
+       "avg_exposure": 0.906786
+      },
+      "full": {
+       "total_return": -0.27136,
+       "cagr": -0.076698,
+       "max_drawdown": -0.357826,
+       "sharpe": -0.531411,
+       "avg_exposure": 0.910029
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 16,
+      "trades": 400,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.08013,
+       "cagr": 0.039878,
+       "max_drawdown": -0.128471,
+       "sharpe": 0.378984,
+       "avg_exposure": 0.911542
+      },
+      "oos": {
+       "total_return": -0.267305,
+       "cagr": -0.144481,
+       "max_drawdown": -0.298506,
+       "sharpe": -1.136677,
+       "avg_exposure": 0.905552
+      },
+      "full": {
+       "total_return": -0.206011,
+       "cagr": -0.056491,
+       "max_drawdown": -0.310432,
+       "sharpe": -0.395059,
+       "avg_exposure": 0.908532
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 594,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.190617,
+       "cagr": 0.092543,
+       "max_drawdown": -0.084742,
+       "sharpe": 0.813483,
+       "avg_exposure": 0.913545
+      },
+      "oos": {
+       "total_return": -0.246486,
+       "cagr": -0.13237,
+       "max_drawdown": -0.28532,
+       "sharpe": -1.051402,
+       "avg_exposure": 0.896234
+      },
+      "full": {
+       "total_return": -0.101378,
+       "cagr": -0.026585,
+       "max_drawdown": -0.28532,
+       "sharpe": -0.158149,
+       "avg_exposure": 0.904846
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 8,
+      "trades": 199,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.119631,
+       "cagr": 0.058998,
+       "max_drawdown": -0.107523,
+       "sharpe": 0.587058,
+       "avg_exposure": 0.910478
+      },
+      "oos": {
+       "total_return": -0.223121,
+       "cagr": -0.118975,
+       "max_drawdown": -0.28975,
+       "sharpe": -0.863477,
+       "avg_exposure": 0.895784
+      },
+      "full": {
+       "total_return": -0.134049,
+       "cagr": -0.03563,
+       "max_drawdown": -0.28975,
+       "sharpe": -0.233876,
+       "avg_exposure": 0.903094
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 12,
+      "trades": 304,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.097098,
+       "cagr": 0.048133,
+       "max_drawdown": -0.136416,
+       "sharpe": 0.51561,
+       "avg_exposure": 0.907609
+      },
+      "oos": {
+       "total_return": -0.281853,
+       "cagr": -0.153046,
+       "max_drawdown": -0.337495,
+       "sharpe": -1.222256,
+       "avg_exposure": 0.888445
+      },
+      "full": {
+       "total_return": -0.219296,
+       "cagr": -0.060495,
+       "max_drawdown": -0.337495,
+       "sharpe": -0.478477,
+       "avg_exposure": 0.897979
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 16,
+      "trades": 399,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.087568,
+       "cagr": 0.043504,
+       "max_drawdown": -0.131055,
+       "sharpe": 0.475354,
+       "avg_exposure": 0.909104
+      },
+      "oos": {
+       "total_return": -0.305351,
+       "cagr": -0.167065,
+       "max_drawdown": -0.359524,
+       "sharpe": -1.397656,
+       "avg_exposure": 0.886771
+      },
+      "full": {
+       "total_return": -0.249947,
+       "cagr": -0.069933,
+       "max_drawdown": -0.359524,
+       "sharpe": -0.580857,
+       "avg_exposure": 0.897881
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 24,
+      "trades": 592,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.101615,
+       "cagr": 0.05032,
+       "max_drawdown": -0.133292,
+       "sharpe": 0.549965,
+       "avg_exposure": 0.905346
+      },
+      "oos": {
+       "total_return": -0.255506,
+       "cagr": -0.137596,
+       "max_drawdown": -0.305451,
+       "sharpe": -1.236042,
+       "avg_exposure": 0.885501
+      },
+      "full": {
+       "total_return": -0.182068,
+       "cagr": -0.049398,
+       "max_drawdown": -0.305451,
+       "sharpe": -0.420988,
+       "avg_exposure": 0.895374
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 8,
+      "trades": 197,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.002271,
+       "cagr": 0.001151,
+       "max_drawdown": -0.15527,
+       "sharpe": 0.087075,
+       "avg_exposure": 0.918679
+      },
+      "oos": {
+       "total_return": -0.297498,
+       "cagr": -0.162354,
+       "max_drawdown": -0.351336,
+       "sharpe": -0.887601,
+       "avg_exposure": 0.903971
+      },
+      "full": {
+       "total_return": -0.297806,
+       "cagr": -0.085263,
+       "max_drawdown": -0.383787,
+       "sharpe": -0.437467,
+       "avg_exposure": 0.911288
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 12,
+      "trades": 303,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.023588,
+       "cagr": 0.011897,
+       "max_drawdown": -0.140781,
+       "sharpe": 0.154385,
+       "avg_exposure": 0.914155
+      },
+      "oos": {
+       "total_return": -0.329169,
+       "cagr": -0.181519,
+       "max_drawdown": -0.365289,
+       "sharpe": -1.11964,
+       "avg_exposure": 0.897015
+      },
+      "full": {
+       "total_return": -0.315142,
+       "cagr": -0.091009,
+       "max_drawdown": -0.410432,
+       "sharpe": -0.530763,
+       "avg_exposure": 0.905542
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 16,
+      "trades": 401,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.065938,
+       "cagr": 0.032924,
+       "max_drawdown": -0.115302,
+       "sharpe": 0.310011,
+       "avg_exposure": 0.919172
+      },
+      "oos": {
+       "total_return": -0.334103,
+       "cagr": -0.184545,
+       "max_drawdown": -0.365223,
+       "sharpe": -1.219002,
+       "avg_exposure": 0.890716
+      },
+      "full": {
+       "total_return": -0.293048,
+       "cagr": -0.083704,
+       "max_drawdown": -0.380333,
+       "sharpe": -0.525854,
+       "avg_exposure": 0.904873
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 24,
+      "trades": 595,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.09587,
+       "cagr": 0.047537,
+       "max_drawdown": -0.092881,
+       "sharpe": 0.426602,
+       "avg_exposure": 0.91562
+      },
+      "oos": {
+       "total_return": -0.350361,
+       "cagr": -0.194595,
+       "max_drawdown": -0.388352,
+       "sharpe": -1.408859,
+       "avg_exposure": 0.878291
+      },
+      "full": {
+       "total_return": -0.289002,
+       "cagr": -0.082385,
+       "max_drawdown": -0.388352,
+       "sharpe": -0.555568,
+       "avg_exposure": 0.896862
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 200,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.055852,
+       "cagr": 0.027954,
+       "max_drawdown": -0.165057,
+       "sharpe": 0.27166,
+       "avg_exposure": 0.902073
+      },
+      "oos": {
+       "total_return": -0.290831,
+       "cagr": -0.158375,
+       "max_drawdown": -0.338774,
+       "sharpe": -1.014226,
+       "avg_exposure": 0.900252
+      },
+      "full": {
+       "total_return": -0.246997,
+       "cagr": -0.069012,
+       "max_drawdown": -0.338774,
+       "sharpe": -0.412068,
+       "avg_exposure": 0.901158
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 12,
+      "trades": 295,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.102828,
+       "cagr": 0.050906,
+       "max_drawdown": -0.111182,
+       "sharpe": 0.461689,
+       "avg_exposure": 0.907801
+      },
+      "oos": {
+       "total_return": -0.24386,
+       "cagr": -0.130854,
+       "max_drawdown": -0.280794,
+       "sharpe": -0.885466,
+       "avg_exposure": 0.892032
+      },
+      "full": {
+       "total_return": -0.161542,
+       "cagr": -0.043441,
+       "max_drawdown": -0.286283,
+       "sharpe": -0.258375,
+       "avg_exposure": 0.899877
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 16,
+      "trades": 394,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.06407,
+       "cagr": 0.032005,
+       "max_drawdown": -0.119969,
+       "sharpe": 0.319965,
+       "avg_exposure": 0.905807
+      },
+      "oos": {
+       "total_return": -0.139124,
+       "cagr": -0.072405,
+       "max_drawdown": -0.19932,
+       "sharpe": -0.50525,
+       "avg_exposure": 0.893206
+      },
+      "full": {
+       "total_return": -0.079764,
+       "cagr": -0.020735,
+       "max_drawdown": -0.19932,
+       "sharpe": -0.101438,
+       "avg_exposure": 0.899475
+      }
+     },
+     {
+      "set": "grid #2",
+      "params": {
+       "min_score": 45,
+       "market_filter": "sma200",
+       "trend_filter": "none",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 24,
+      "trades": 585,
+      "candidates_is": 2280,
+      "is": {
+       "total_return": 0.084758,
+       "cagr": 0.042135,
+       "max_drawdown": -0.100361,
+       "sharpe": 0.416995,
+       "avg_exposure": 0.908485
+      },
+      "oos": {
+       "total_return": -0.144859,
+       "cagr": -0.07551,
+       "max_drawdown": -0.194459,
+       "sharpe": -0.579614,
+       "avg_exposure": 0.889988
+      },
+      "full": {
+       "total_return": -0.069373,
+       "cagr": -0.01796,
+       "max_drawdown": -0.194459,
+       "sharpe": -0.092845,
+       "avg_exposure": 0.89919
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 8,
+      "trades": 190,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.220034,
+       "cagr": 0.106154,
+       "max_drawdown": -0.123058,
+       "sharpe": 0.75126,
+       "avg_exposure": 0.949338
+      },
+      "oos": {
+       "total_return": -0.146338,
+       "cagr": -0.076313,
+       "max_drawdown": -0.270008,
+       "sharpe": -0.38054,
+       "avg_exposure": 0.941388
+      },
+      "full": {
+       "total_return": 0.048353,
+       "cagr": 0.011974,
+       "max_drawdown": -0.270008,
+       "sharpe": 0.154984,
+       "avg_exposure": 0.945343
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 12,
+      "trades": 292,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.23768,
+       "cagr": 0.114242,
+       "max_drawdown": -0.128005,
+       "sharpe": 0.848494,
+       "avg_exposure": 0.94645
+      },
+      "oos": {
+       "total_return": -0.226507,
+       "cagr": -0.120903,
+       "max_drawdown": -0.272078,
+       "sharpe": -0.775827,
+       "avg_exposure": 0.939908
+      },
+      "full": {
+       "total_return": -0.033834,
+       "cagr": -0.008639,
+       "max_drawdown": -0.272078,
+       "sharpe": 0.013514,
+       "avg_exposure": 0.943163
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 16,
+      "trades": 388,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.149194,
+       "cagr": 0.073092,
+       "max_drawdown": -0.141449,
+       "sharpe": 0.601533,
+       "avg_exposure": 0.944951
+      },
+      "oos": {
+       "total_return": -0.133085,
+       "cagr": -0.069146,
+       "max_drawdown": -0.220653,
+       "sharpe": -0.424644,
+       "avg_exposure": 0.937957
+      },
+      "full": {
+       "total_return": 0.002718,
+       "cagr": 0.000685,
+       "max_drawdown": -0.220653,
+       "sharpe": 0.074502,
+       "avg_exposure": 0.941437
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "score",
+      "max_positions": 24,
+      "trades": 582,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.13319,
+       "cagr": 0.065485,
+       "max_drawdown": -0.127485,
+       "sharpe": 0.564355,
+       "avg_exposure": 0.944894
+      },
+      "oos": {
+       "total_return": -0.153992,
+       "cagr": -0.080477,
+       "max_drawdown": -0.218705,
+       "sharpe": -0.530247,
+       "avg_exposure": 0.926185
+      },
+      "full": {
+       "total_return": -0.039989,
+       "cagr": -0.010234,
+       "max_drawdown": -0.218705,
+       "sharpe": -0.010001,
+       "avg_exposure": 0.935492
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 8,
+      "trades": 214,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": -0.047495,
+       "cagr": -0.024383,
+       "max_drawdown": -0.168362,
+       "sharpe": -0.09986,
+       "avg_exposure": 0.953292
+      },
+      "oos": {
+       "total_return": -0.112506,
+       "cagr": -0.058124,
+       "max_drawdown": -0.233928,
+       "sharpe": -0.29987,
+       "avg_exposure": 0.93604
+      },
+      "full": {
+       "total_return": -0.153982,
+       "cagr": -0.041274,
+       "max_drawdown": -0.233928,
+       "sharpe": -0.203601,
+       "avg_exposure": 0.944623
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 12,
+      "trades": 318,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": -0.004829,
+       "cagr": -0.002453,
+       "max_drawdown": -0.164279,
+       "sharpe": 0.050442,
+       "avg_exposure": 0.946435
+      },
+      "oos": {
+       "total_return": -0.195175,
+       "cagr": -0.103214,
+       "max_drawdown": -0.261881,
+       "sharpe": -0.723401,
+       "avg_exposure": 0.936033
+      },
+      "full": {
+       "total_return": -0.201329,
+       "cagr": -0.055091,
+       "max_drawdown": -0.265267,
+       "sharpe": -0.345342,
+       "avg_exposure": 0.941208
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 16,
+      "trades": 411,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.044274,
+       "cagr": 0.02222,
+       "max_drawdown": -0.165379,
+       "sharpe": 0.232679,
+       "avg_exposure": 0.947693
+      },
+      "oos": {
+       "total_return": -0.206066,
+       "cagr": -0.109323,
+       "max_drawdown": -0.258422,
+       "sharpe": -0.827095,
+       "avg_exposure": 0.938264
+      },
+      "full": {
+       "total_return": -0.170954,
+       "cagr": -0.046159,
+       "max_drawdown": -0.258422,
+       "sharpe": -0.294955,
+       "avg_exposure": 0.942955
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_score",
+      "max_positions": 24,
+      "trades": 612,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.055026,
+       "cagr": 0.027546,
+       "max_drawdown": -0.150402,
+       "sharpe": 0.280337,
+       "avg_exposure": 0.946498
+      },
+      "oos": {
+       "total_return": -0.233573,
+       "cagr": -0.124942,
+       "max_drawdown": -0.284262,
+       "sharpe": -0.983296,
+       "avg_exposure": 0.928051
+      },
+      "full": {
+       "total_return": -0.192066,
+       "cagr": -0.052341,
+       "max_drawdown": -0.284262,
+       "sharpe": -0.362501,
+       "avg_exposure": 0.937228
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 8,
+      "trades": 206,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.171311,
+       "cagr": 0.08352,
+       "max_drawdown": -0.092667,
+       "sharpe": 0.702557,
+       "avg_exposure": 0.934824
+      },
+      "oos": {
+       "total_return": -0.236911,
+       "cagr": -0.126856,
+       "max_drawdown": -0.300999,
+       "sharpe": -0.898922,
+       "avg_exposure": 0.933268
+      },
+      "full": {
+       "total_return": -0.115347,
+       "cagr": -0.030421,
+       "max_drawdown": -0.300999,
+       "sharpe": -0.165116,
+       "avg_exposure": 0.934042
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 12,
+      "trades": 308,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.076144,
+       "cagr": 0.037929,
+       "max_drawdown": -0.11877,
+       "sharpe": 0.365447,
+       "avg_exposure": 0.938932
+      },
+      "oos": {
+       "total_return": -0.169664,
+       "cagr": -0.089063,
+       "max_drawdown": -0.239272,
+       "sharpe": -0.67009,
+       "avg_exposure": 0.932428
+      },
+      "full": {
+       "total_return": -0.115729,
+       "cagr": -0.030527,
+       "max_drawdown": -0.239272,
+       "sharpe": -0.185345,
+       "avg_exposure": 0.935663
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 16,
+      "trades": 406,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.038255,
+       "cagr": 0.019227,
+       "max_drawdown": -0.12035,
+       "sharpe": 0.21933,
+       "avg_exposure": 0.941393
+      },
+      "oos": {
+       "total_return": -0.132439,
+       "cagr": -0.068798,
+       "max_drawdown": -0.20629,
+       "sharpe": -0.515499,
+       "avg_exposure": 0.930203
+      },
+      "full": {
+       "total_return": -0.106118,
+       "cagr": -0.027882,
+       "max_drawdown": -0.20629,
+       "sharpe": -0.171514,
+       "avg_exposure": 0.93577
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "low_vol",
+      "max_positions": 24,
+      "trades": 589,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.150583,
+       "cagr": 0.07375,
+       "max_drawdown": -0.11733,
+       "sharpe": 0.672442,
+       "avg_exposure": 0.93775
+      },
+      "oos": {
+       "total_return": -0.134231,
+       "cagr": -0.069763,
+       "max_drawdown": -0.19832,
+       "sharpe": -0.547709,
+       "avg_exposure": 0.928771
+      },
+      "full": {
+       "total_return": -0.007154,
+       "cagr": -0.001808,
+       "max_drawdown": -0.19832,
+       "sharpe": 0.043716,
+       "avg_exposure": 0.933238
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 8,
+      "trades": 213,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.078652,
+       "cagr": 0.039155,
+       "max_drawdown": -0.161188,
+       "sharpe": 0.332345,
+       "avg_exposure": 0.943014
+      },
+      "oos": {
+       "total_return": -0.392553,
+       "cagr": -0.221278,
+       "max_drawdown": -0.438067,
+       "sharpe": -1.302482,
+       "avg_exposure": 0.933114
+      },
+      "full": {
+       "total_return": -0.347574,
+       "cagr": -0.102057,
+       "max_drawdown": -0.471237,
+       "sharpe": -0.567936,
+       "avg_exposure": 0.938039
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 12,
+      "trades": 311,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.071527,
+       "cagr": 0.035668,
+       "max_drawdown": -0.145101,
+       "sharpe": 0.31284,
+       "avg_exposure": 0.947481
+      },
+      "oos": {
+       "total_return": -0.298109,
+       "cagr": -0.16272,
+       "max_drawdown": -0.345905,
+       "sharpe": -0.997958,
+       "avg_exposure": 0.933948
+      },
+      "full": {
+       "total_return": -0.250147,
+       "cagr": -0.069995,
+       "max_drawdown": -0.381346,
+       "sharpe": -0.387474,
+       "avg_exposure": 0.94068
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 16,
+      "trades": 412,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.066848,
+       "cagr": 0.033371,
+       "max_drawdown": -0.120045,
+       "sharpe": 0.30358,
+       "avg_exposure": 0.949461
+      },
+      "oos": {
+       "total_return": -0.2551,
+       "cagr": -0.137361,
+       "max_drawdown": -0.307779,
+       "sharpe": -0.887738,
+       "avg_exposure": 0.932371
+      },
+      "full": {
+       "total_return": -0.206085,
+       "cagr": -0.056513,
+       "max_drawdown": -0.329401,
+       "sharpe": -0.320844,
+       "avg_exposure": 0.940873
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "rs",
+      "max_positions": 24,
+      "trades": 613,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.093793,
+       "cagr": 0.046529,
+       "max_drawdown": -0.124652,
+       "sharpe": 0.406809,
+       "avg_exposure": 0.945433
+      },
+      "oos": {
+       "total_return": -0.20824,
+       "cagr": -0.110548,
+       "max_drawdown": -0.259274,
+       "sharpe": -0.722292,
+       "avg_exposure": 0.931794
+      },
+      "full": {
+       "total_return": -0.133788,
+       "cagr": -0.035556,
+       "max_drawdown": -0.274127,
+       "sharpe": -0.18647,
+       "avg_exposure": 0.938579
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 8,
+      "trades": 202,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.214641,
+       "cagr": 0.103671,
+       "max_drawdown": -0.144727,
+       "sharpe": 0.751052,
+       "avg_exposure": 0.943275
+      },
+      "oos": {
+       "total_return": -0.329652,
+       "cagr": -0.181814,
+       "max_drawdown": -0.370782,
+       "sharpe": -1.181592,
+       "avg_exposure": 0.942921
+      },
+      "full": {
+       "total_return": -0.188882,
+       "cagr": -0.051401,
+       "max_drawdown": -0.374161,
+       "sharpe": -0.268707,
+       "avg_exposure": 0.943097
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 12,
+      "trades": 309,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.164467,
+       "cagr": 0.080304,
+       "max_drawdown": -0.13407,
+       "sharpe": 0.636875,
+       "avg_exposure": 0.950063
+      },
+      "oos": {
+       "total_return": -0.352303,
+       "cagr": -0.195804,
+       "max_drawdown": -0.400417,
+       "sharpe": -1.421421,
+       "avg_exposure": 0.938104
+      },
+      "full": {
+       "total_return": -0.250341,
+       "cagr": -0.070056,
+       "max_drawdown": -0.400417,
+       "sharpe": -0.443431,
+       "avg_exposure": 0.944054
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 16,
+      "trades": 408,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.123524,
+       "cagr": 0.060865,
+       "max_drawdown": -0.106136,
+       "sharpe": 0.525241,
+       "avg_exposure": 0.949905
+      },
+      "oos": {
+       "total_return": -0.312253,
+       "cagr": -0.171227,
+       "max_drawdown": -0.358136,
+       "sharpe": -1.315232,
+       "avg_exposure": 0.938683
+      },
+      "full": {
+       "total_return": -0.231723,
+       "cagr": -0.064287,
+       "max_drawdown": -0.358136,
+       "sharpe": -0.435939,
+       "avg_exposure": 0.944266
+      }
+     },
+     {
+      "set": "grid #3",
+      "params": {
+       "min_score": 45,
+       "market_filter": "none",
+       "trend_filter": "sma200",
+       "entry_mode": "open",
+       "sl_atr": 3.5,
+       "max_sl_pct": 0.15,
+       "rr": [
+        2.5,
+        4.0
+       ],
+       "trail_ma": 20,
+       "hold_max_days": 60
+      },
+      "rank": "random",
+      "max_positions": 24,
+      "trades": 617,
+      "candidates_is": 2079,
+      "is": {
+       "total_return": 0.032578,
+       "cagr": 0.016396,
+       "max_drawdown": -0.12625,
+       "sharpe": 0.192012,
+       "avg_exposure": 0.947067
+      },
+      "oos": {
+       "total_return": -0.291699,
+       "cagr": -0.158892,
+       "max_drawdown": -0.334381,
+       "sharpe": -1.273091,
+       "avg_exposure": 0.931489
+      },
+      "full": {
+       "total_return": -0.268492,
+       "cagr": -0.075784,
+       "max_drawdown": -0.334381,
+       "sharpe": -0.550619,
+       "avg_exposure": 0.939239
+      }
+     }
+    ]
+   }
+  },
+  "seconds": 97
+ }
 }
