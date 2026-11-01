@@ -1,0 +1,61 @@
+{
+ "generated_at": "2026-11-01 14:34",
+ "demo": false,
+ "universe": 485,
+ "holdout_from": "2026-04-30",
+ "rules": {
+  "holdout_months": 6,
+  "block_months": 6,
+  "min_n_select": {
+   "short": 60,
+   "medium": 30
+  },
+  "min_n_holdout": 10,
+  "min_gain": 0.0015,
+  "min_blocks_won": 0.6,
+  "max_dd_worse": 0.03
+ },
+ "horizons": {
+  "short": {
+   "tried": 16,
+   "passed_selection": 0,
+   "select_cur": 0.00288,
+   "select_n": 11763,
+   "holdout_from": "2026-04-30",
+   "status": "tetap",
+   "reason": "Dari 16 perubahan yang diuji, tidak ada yang konsisten lebih baik di semua periode. Parameter sekarang tetap dipakai."
+  },
+  "medium": {
+   "tried": 18,
+   "passed_selection": 1,
+   "select_cur": 0.003828,
+   "select_n": 6076,
+   "holdout_from": "2026-04-30",
+   "evidence": {
+    "select_cur": 0.003828,
+    "select_new": 0.006282,
+    "select_n_new": 5179,
+    "blocks_won": [
+     6,
+     9
+    ],
+    "holdout_cur": -0.019154,
+    "holdout_new": -0.023077,
+    "holdout_n_cur": 675,
+    "holdout_n_new": 623,
+    "port_ret_cur": -0.16646,
+    "port_ret_new": -0.293898,
+    "port_dd_cur": -0.241434,
+    "port_dd_new": -0.328527
+   },
+   "change": {
+    "param": "trend_filter",
+    "old": "none",
+    "new": "sma200"
+   },
+   "status": "tetap",
+   "reason": "Kandidat terbaik (trend_filter none → sma200) gagal uji akhir: kalah di 6 bulan terakhir, drawdown portofolio lebih dalam, return portofolio lebih rendah. Parameter sekarang tetap dipakai."
+  }
+ },
+ "seconds": 109
+}
