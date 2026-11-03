@@ -8728,5 +8728,23 @@
   "rev_growth": 0.055,
   "shares": 159661556.0,
   "ts": "2026-10-31T15:29:48"
+ },
+ "ERIE": {
+  "name": "Erie Indemnity Company",
+  "sector": "Financial Services",
+  "industry": "Insurance Brokers",
+  "pe": 23.758022,
+  "pb": 5.61125,
+  "roe": 0.23702,
+  "der": 0.02127,
+  "div_yield_raw": 2.24,
+  "eps_ttm": 11.53,
+  "bvps": 48.818,
+  "fin_currency": "USD",
+  "v": 3,
+  "eps_growth": -0.005,
+  "rev_growth": 0.003,
+  "shares": 46189068.0,
+  "ts": "2026-11-03T03:39:48"
  }
 }
